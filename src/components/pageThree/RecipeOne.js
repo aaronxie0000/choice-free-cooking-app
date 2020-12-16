@@ -1,8 +1,18 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import {UserDataContext} from '../../context/UserContext.js'
 
 
 function RecipeOne(){
+    const {day, recipe } = useContext(UserDataContext);
+    const [dayID, updateDay] = day;
+    const [recipeID, updateRecipeID] = recipe;
+    
+    useEffect(()=>{
+        console.log(dayID);
+        console.log(recipeID);
+    },[])
+
 
     return(
         <div>

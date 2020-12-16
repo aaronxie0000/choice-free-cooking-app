@@ -2,6 +2,7 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 
 const firebaseConfig = {
+  // these are not important to hide, firestore security other ways; but best practice is to use .env
     apiKey: "AIzaSyCppM1RmgJWM7R2aHkCNWBjICioHPlgpcI",
     authDomain: "choice-free-cooking.firebaseapp.com",
     projectId: "choice-free-cooking",

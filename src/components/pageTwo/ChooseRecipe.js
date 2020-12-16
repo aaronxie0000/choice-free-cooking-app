@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+
 import SignIn from '../SignIn.js';
 import ChooseDay from './changeDay.js';
-import RecipeCardOne from './RecipeCardOne.js'
-import RecipeCardTwo from './RecipeCardTwo.js'
+import RecipeCardOne from './RecipeCardOne.js';
+import RecipeCardTwo from './RecipeCardTwo.js';
+
+
 import firebase from '../../firebase.js'
 
-import { Link } from 'react-router-dom';
 
 
 function ChooseRecipe(){
