@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -9,33 +9,75 @@ import RecipeCardTwo from './RecipeCardTwo.js';
 
 
 import firebase from '../../firebase.js'
+import { DayContext } from '../../context/DayContext.js';
 
 
 
 function ChooseRecipe(){
+    const [loading, updateLoad] = useState(true)
+    const [dayID, updateDay] = useContext(DayContext);
     
-    const ref =firebase.firestore().collection('recipeDetail');
+    const [dayData, updateDayData] = useState({});
+    const [recipeDataOne, updateRecipeOne] = useState({});
+    const [recipeDataTwo, updateRecipeTwo] = useState({});
+
 
     useEffect(()=>{
-        ref.onSnapshot((querySnapshot)=>{
+        updateLoad(true);
+        console.log(dayID);
+
+        const tempRecipeData = []
+
+        firebase.firestore().collection('recipeSelect').where('day','==',dayID)
+        .onSnapshot((querySnapshot)=>{
             querySnapshot.forEach((doc) =>{
-                console.log(doc.data())
+                console.log('queryed')
+                const rawData = doc.data();
+                const firstRecipe = {
+                    recipeOneID: rawData.recipeOneID,
+                    recipeOneTitle: rawData.recipeOneTitle,
+                    recipeOneDesc: rawData.recipeOneDesc,
+                }
+                const secondRecipe = {
+                    recipeTwoID: rawData.recipeTwoID,
+                    recipeTwoTitle: rawData.recipeTwoTitle,
+                    recipeTwoDesc: rawData.recipeTwoDesc,
+                }
+                const rawDayData = {
+                    day: rawData.day,
+                    dayTech: rawData.dayTech
+                }
+
+                tempRecipeData.push(...[firstRecipe,secondRecipe]);
+                updateDayData(rawDayData);
             })
+            updateRecipeOne(tempRecipeData[0]);
+            updateRecipeTwo(tempRecipeData[1]);
+            updateLoad(false)
         })
-    });
+       
+        
+    },[]);
 
-
-    return(
-        <div>
-            <Link to='/'><button>Back</button></Link>
-            <ChooseDay></ChooseDay>
-            {/* these will all become components */}
-            <Link to='/recipes/one'> <RecipeCardOne></RecipeCardOne> </Link>
-            <Link to='/recipes/two'> <RecipeCardTwo></RecipeCardTwo> </Link>
-            <SignIn></SignIn>
-        </div>
-     
-    )
+    if (loading){
+        return(
+            <h3>Loading....</h3>
+        )
+    }
+    else{
+        //this if else statement is super important, or else is loading these components before their prop is ready
+        return(
+            <div>
+                <Link to='/'><button>Back</button></Link>
+                <ChooseDay changeDay={updateDay}></ChooseDay>
+                {/* these will all become components */}
+                <Link to='/recipes/one'> <RecipeCardOne recipeData={recipeDataOne}></RecipeCardOne> </Link>
+                <Link to='/recipes/two'> <RecipeCardTwo recipeData={recipeDataTwo}></RecipeCardTwo> </Link>
+                <SignIn></SignIn>
+            </div>
+         
+        )
+    }
 }
 
 export default ChooseRecipe;

@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import {RecipeContext} from '../../context/RecipeContext'
 
 
-function RecipeCardOne(){
+function RecipeCardOne({recipeData:{recipeOneID, recipeOneTitle, recipeOneDesc}}){
+    const [recipeID, updateRecipeID] = useContext(RecipeContext);
+
+    function passRecipeID(){
+        updateRecipeID(recipeOneID)
+    }
+
 
     return(
-        <div>Recipe Card One</div>
+        <div onClick={passRecipeID}>
+            <p>{recipeOneTitle}</p>
+            {recipeOneDesc.map((desc, index)=>{
+                return <p key={index}>{desc}</p>
+            })}
+        </div>
     )
 }
 
 export default RecipeCardOne;
+
+
+

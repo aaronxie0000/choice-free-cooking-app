@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Landing(){
 
     return(
-        <div style={{display:'flex', alignContent:'center', justifyContent:'center' }}>
+        <div>
             <Link to='/recipes'> <button>Starts Here</button> </Link>
             <SignIn></SignIn>
         </div>
