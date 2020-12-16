@@ -1,4 +1,5 @@
 import React, {useRef} from 'react';
+import './SignIn.css'
 
 
 function SignIn(){
@@ -23,7 +24,7 @@ function SignIn(){
                 <form onSubmit={newUser}>
                     <input type='text' placeholder='Email'></input>
                     <input type='text' placeholder='Password'></input>
-                    <button type="submit"></button>
+                    <button type="submit">Sign me In! </button>
                 </form>
             </div>   
         </div>

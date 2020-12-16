@@ -6,22 +6,26 @@ import RecipeTwo from './components/pageThree/RecipeTwo.js';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-import {UserDataProvider} from './context/UserContext.js';
+import {DayProvider} from './context/DayContext';
+import { RecipeProvider } from './context/RecipeContext';
 
 function App() {
   return (
-    <div className="App">
-      <UserDataProvider> 
-      <Router>
-        <Switch>
-          <Route path='/' exact component={Landing}></Route>
-          <Route path='/recipes' exact component={ChooseRecipe}></Route>
-          <Route path='/recipes/one' exact component={RecipeOne}></Route>
-          <Route path='/recipes/two' exact component={RecipeTwo}></Route>
-        </Switch>
-      </Router>
-      </UserDataProvider>
-    </div>
+    <DayProvider> 
+      <RecipeProvider> 
+        <div className="App">
+          <Router>
+            <Switch>
+              <Route path='/' exact component={Landing}></Route>
+              <Route path='/recipes' exact component={ChooseRecipe}></Route>
+              <Route path='/recipes/one' exact component={RecipeOne}></Route>
+              <Route path='/recipes/two' exact component={RecipeTwo}></Route>
+            </Switch>
+          </Router>
+        </div>
+      </RecipeProvider>
+   </DayProvider>
+
   );
 }
 
