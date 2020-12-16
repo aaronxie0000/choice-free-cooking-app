@@ -16,9 +16,9 @@ function SignIn(){
     }
 
     return(
-        <div>
+        <div className="landing__signIn">
             {/* instead of using react router, this component can be imported into multiple page, sign in button can be absoulte positioned, and when click, the other hidden elements of the sign in page are show  */}
-            <button onClick={showSignIn}>Sign In</button>  
+            <button onClick={showSignIn} className="landing__signIn__btn">Sign In</button>  
             <div ref={logInPage} className="hiddenSignIn">
                 {/* here will do an translucent overlay of elements below and show the login card */}
                 <form onSubmit={newUser}>

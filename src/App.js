@@ -9,6 +9,8 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {DayProvider} from './context/DayContext';
 import { RecipeProvider } from './context/RecipeContext';
 
+import './app_styles/app.css'
+
 function App() {
 
   return (

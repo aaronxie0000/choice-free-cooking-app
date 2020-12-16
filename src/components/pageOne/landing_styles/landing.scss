@@ -1,0 +1,74 @@
+@import '../../../app_styles/variables';
+
+.landing{
+    border: solid 1px red;
+
+    display: grid;
+    grid-template-columns: 3fr 3fr 1fr;
+    grid-template-rows: 20vh 50vh 30vh 100vh;
+    grid-template-areas:
+        ". . signIn"
+        "title figure ."
+        ". . ."
+        ". . .";
+
+    &__mainText{
+        border: solid 1px red;
+
+        grid-area: title;
+        margin-left: 8rem;
+
+        width: 27rem;
+        
+
+        p {
+            font-weight: bold;
+            font-size: 5rem;
+        }
+    }
+
+        &__enter{
+            border: solid 1px red;
+
+            
+            border-radius: 10px;
+        
+            color: $secColor;
+            background-color: $triColor;
+            border: $triColor;
+
+            width: 235.67px;
+            height: 61px;
+
+            font-weight: bold;
+            font-size: 40px;
+
+        }
+
+    &__figure{
+        grid-area: figure;
+        // width: 5rem;
+        width: 448px;
+        height: 288px;
+    }
+
+
+    &__signIn{
+        grid-area: signIn;
+
+        &__btn{
+            border-radius: 10px;
+            font-size: 22px;
+    
+            width: 108px;
+            height: 48px;
+
+    
+            background-color: $priColor;
+            border: $priColor;
+            color: $secColor;
+        }
+       
+    }
+}
+

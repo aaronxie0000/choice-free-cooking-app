@@ -1,0 +1,61 @@
+.landing {
+  border: solid 1px red;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 3fr 1fr;
+      grid-template-columns: 3fr 3fr 1fr;
+  -ms-grid-rows: 20vh 50vh 30vh 100vh;
+      grid-template-rows: 20vh 50vh 30vh 100vh;
+      grid-template-areas: ". . signIn" "title figure ." ". . ." ". . .";
+}
+
+.landing__mainText {
+  border: solid 1px red;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: title;
+  margin-left: 8rem;
+  width: 27rem;
+}
+
+.landing__mainText p {
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+.landing__enter {
+  border: solid 1px red;
+  border-radius: 10px;
+  color: #FEF9EF;
+  background-color: #DB5461;
+  border: #DB5461;
+  width: 235.67px;
+  height: 61px;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.landing__figure {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: figure;
+  width: 448px;
+  height: 288px;
+}
+
+.landing__signIn {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: signIn;
+}
+
+.landing__signIn__btn {
+  border-radius: 10px;
+  font-size: 22px;
+  width: 108px;
+  height: 48px;
+  background-color: #33312E;
+  border: #33312E;
+  color: #FEF9EF;
+}
+/*# sourceMappingURL=landing.css.map */
