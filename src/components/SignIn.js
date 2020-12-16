@@ -11,7 +11,7 @@ function SignIn(){
         console.log(logInPage.current.className)
     }
 
-    function newUser(){
+    function newUser(e){
         console.log('form works')
     }
 

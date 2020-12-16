@@ -24,14 +24,13 @@ function ChooseRecipe(){
 
     useEffect(()=>{
         updateLoad(true);
-        console.log(dayID);
 
         const tempRecipeData = []
 
         firebase.firestore().collection('recipeSelect').where('day','==',dayID)
         .onSnapshot((querySnapshot)=>{
             querySnapshot.forEach((doc) =>{
-                console.log('queryed')
+                console.log(dayID)
                 const rawData = doc.data();
                 const firstRecipe = {
                     recipeOneID: rawData.recipeOneID,
