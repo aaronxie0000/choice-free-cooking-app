@@ -1,25 +1,33 @@
 import React, { useEffect } from 'react';
 import SignIn from '../SignIn.js';
-import ChooseDay from './ChooseDay.js';
-import {BrowserRouter as Switch, Route} from 'react-router-dom';
+import ChooseDay from './changeDay.js';
 import RecipeCardOne from './RecipeCardOne.js'
 import RecipeCardTwo from './RecipeCardTwo.js'
+import firebase from '../../firebase.js'
+
+import { Link } from 'react-router-dom';
 
 
 function ChooseRecipe(){
+    
+    const ref =firebase.firestore().collection('recipeDetail');
 
     useEffect(()=>{
-        console.log('Choose Recipe Day')
-    },[])
+        ref.onSnapshot((querySnapshot)=>{
+            querySnapshot.forEach((doc) =>{
+                console.log(doc.data())
+            })
+        })
+    });
+
 
     return(
         <div>
+            <Link to='/'><button>Back</button></Link>
             <ChooseDay></ChooseDay>
             {/* these will all become components */}
-            <Switch>
-                <Route Link='/recipes/choiceone' exact component={RecipeCardOne} ></Route>
-                <Route Link='/recipes/choicetwo' exact component={RecipeCardTwo} ></Route>
-            </Switch>
+            <Link to='/recipes/one'> <RecipeCardOne></RecipeCardOne> </Link>
+            <Link to='/recipes/two'> <RecipeCardTwo></RecipeCardTwo> </Link>
             <SignIn></SignIn>
         </div>
      
