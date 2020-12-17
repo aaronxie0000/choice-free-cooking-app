@@ -1,9 +1,6 @@
-@import '../../../app_styles/variables';
+@import "../../../app_styles/variables";
 
-
-
-.landing{
-
+.landing {
     display: grid;
     grid-template-columns: 10vw 40vw 40vw 10vw;
     grid-template-rows: 10vh 60vh 30vh 150vh;
@@ -12,8 +9,9 @@
         ". title figure ."
         ". text text ."
         ". . . .";
-        
-    &__signIn{
+
+    overflow: hidden;
+    &__signIn {
         grid-area: signIn;
         border-radius: 10px;
         font-size: 22px;
@@ -22,22 +20,28 @@
         width: 108px;
         height: 48px;
 
-
         background-color: $priColor;
         border: $priColor;
         color: $secColor;
 
-        
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        &:hover {
+            background-color: lighten($priColor, 5%);
+            cursor: pointer;
+        }
     }
 
-    &__mainText{
+    &__mainText {
         grid-area: title;
 
         width: 40rem;
 
         margin-bottom: 4rem;
-        
-        display:flex;
+
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -45,30 +49,36 @@
         h1 {
             font-weight: bold;
             font-size: 6.66rem;
-            margin: 3rem 0 ;
+            margin: 3rem 0;
         }
-
     }
 
-        &__enter{
+    &__enter {
+        margin-right: 14rem;
 
-            margin-right: 14rem;
-            
-            border-radius: 10px;
-        
-            color: $secColor;
-            background-color: $triColor;
-            border: $triColor;
+        border-radius: 10px;
 
-            width: 235.67px;
-            height: 61px;
+        color: $secColor;
+        background-color: $triColor;
+        border: $triColor;
 
-            font-weight: bold;
-            font-size: 40px;
+        width: 235.67px;
+        height: 61px;
 
+        font-weight: bold;
+        font-size: 40px;
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
         }
+        &:hover {
+            background-color: lighten($triColor, 5%);
+            cursor: pointer;
+        }
+    }
 
-    &__figure{
+    &__figure {
         grid-area: figure;
 
         margin-left: 150px;
@@ -76,34 +86,29 @@
 
         width: 29rem;
 
-        align-self:flex-end;
+        align-self: flex-end;
     }
 
-    &__infoText{
+    &__infoText {
         grid-area: text;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
 
-        h3{
+        h3 {
             font-weight: 500;
             font-size: 1.66rem;
             line-height: 29px;
             text-align: center;
         }
-        
     }
-
-
 }
 
-
-//responsive 
+//responsive
 
 @media only screen and (max-width: 768px) {
-
-    .landing{
+    .landing {
         grid-template-columns: 10vw 80vw 10vw;
         grid-template-rows: 10vh 40vh 20vh 30vh 150vh;
         grid-template-areas:
@@ -113,36 +118,27 @@
             ". text ."
             ". . .";
 
-        &__signIn{
-           margin: 3rem 0 0 -10rem;
-
+        &__signIn {
+            margin: 3rem 0 0 -10rem;
         }
 
-        &__figure{
+        &__figure {
             width: 23rem;
             margin-left: -4rem;
             justify-self: flex-end;
         }
-            
-        &__mainText{
-            align-items:flex-start;
-            max-width:100%;
 
-            h1{
-                font-size:7rem;
+        &__mainText {
+            align-items: flex-start;
+            max-width: 100%;
+
+            h1 {
+                font-size: 7rem;
             }
         }
 
-            &__enter{
-                margin-right: 0;
-            }
-
-           
-
-
-
+        &__enter {
+            margin-right: 0;
+        }
     }
 }
-
-
-

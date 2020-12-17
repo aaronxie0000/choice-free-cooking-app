@@ -10,7 +10,9 @@ function Landing(){
 
     return(
         <div className='landing'>
-            <SignIn></SignIn>
+            
+            <SignIn specificClassName={'landing__signIn'}></SignIn>
+
             <div className="landing__mainText">
                 <h1>Choice-free Cooking</h1>
                 <Link to='/recipes'> <button className="landing__enter">Starts Here</button> </Link>

@@ -1,0 +1,214 @@
+@import "../../app_styles/variables";
+
+.signInModal {
+    border-radius: 10px;
+    box-shadow: 5px 8px 10px 10px rgba(199, 198, 198, 0.25);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    z-index: 1000;
+
+    background-color: $secColor;
+
+    width: 28rem;
+    height: 32rem;
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: whitesmoke;
+        opacity: 0.7;
+        z-index: 1000;
+    }
+
+    &__mainText {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+
+        height: 100%;
+
+        margin: 0 3rem;
+    }
+
+    &__title {
+        align-self: flex-start;
+        margin-left: 1rem;
+        margin-bottom: -5rem;
+        font-weight: 800;
+        font-size: 3rem;
+    }
+
+    &__exit {
+        position: absolute;
+        top: 5px;
+        left: 8px;
+        font-weight: 700;
+
+        padding: 0.5rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__figure {
+        position: absolute;
+        top: -5px;
+        right: -8px;
+    }
+
+    &__form {
+        margin-bottom: -2rem;
+
+        display: grid;
+
+        grid-template-columns: 8fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "email ."
+            "pass submit";
+
+        &__email {
+            grid-area: email;
+
+            width: 12rem;
+            height: 4rem;
+
+            padding: 0rem 1.5rem;
+            border-radius: 10px;
+
+            background-color: $priColor;
+            border: none;
+            color: $secColor;
+
+            font-weight: 500;
+            font-size: 1.8rem;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+
+            &::placeholder {
+                color: darken(#fff, 15%);
+            }
+        }
+
+        &__pass {
+            grid-area: pass;
+
+            width: 12rem;
+            height: 4rem;
+
+            padding: 0rem 1.5rem;
+            margin-top: 0.7rem;
+            margin-right: 0.5rem;
+
+            background-color: $triColor;
+            border: none;
+            border-radius: 10px;
+            color: $secColor;
+
+            font-weight: 500;
+            font-size: 1.8rem;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+
+            &::placeholder {
+                color: darken(#fff, 15%);
+            }
+        }
+
+        &__submit {
+            grid-area: submit;
+
+            width: 4rem;
+            height: 4rem;
+
+            margin-top: 0.7rem;
+            border-radius: 5px;
+            border: none;
+            background-color: $triColor;
+
+            color: $secColor;
+            font-size: 1rem;
+            font-weight: 500;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:active {
+                margin-top: -1.5px;
+                box-shadow: 1px 3px 0 darken(#fff, 10%);
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__oldUser {
+        text-decoration: underline;
+        font-weight: bold;
+        margin-bottom: -0.5rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .signInModal{
+
+        &__form{
+
+            &__email, &__pass{
+                width: 144px;
+                height: 48px;
+            }
+
+            &__submit{
+                width: 48px;
+                height: 48px;
+
+                font-size: 12px;
+            }
+        }
+
+        &__figure{
+            width: 90px;
+            height:auto;
+        }
+
+        &__exit{
+            padding: 1rem;
+            font-size:12px;
+
+        }
+
+        &__oldUser{
+            padding:1rem;
+        }
+    }
+  
+  }
+  
+

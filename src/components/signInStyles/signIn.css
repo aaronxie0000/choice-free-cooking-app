@@ -1,0 +1,228 @@
+.signInModal {
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 8px 10px 10px rgba(199, 198, 198, 0.25);
+          box-shadow: 5px 8px 10px 10px rgba(199, 198, 198, 0.25);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -65%);
+          transform: translate(-50%, -65%);
+  z-index: 1000;
+  background-color: #FEF9EF;
+  width: 28rem;
+  height: 32rem;
+}
+
+.signInModal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: whitesmoke;
+  opacity: 0.7;
+  z-index: 1000;
+}
+
+.signInModal__mainText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  margin: 0 3rem;
+}
+
+.signInModal__title {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 1rem;
+  margin-bottom: -5rem;
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+.signInModal__exit {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+
+.signInModal__exit:hover {
+  cursor: pointer;
+}
+
+.signInModal__figure {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+}
+
+.signInModal__form {
+  margin-bottom: -2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 8fr 2fr;
+      grid-template-columns: 8fr 2fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "email ." "pass submit";
+}
+
+.signInModal__form__email {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: email;
+  width: 12rem;
+  height: 4rem;
+  padding: 0rem 1.5rem;
+  border-radius: 10px;
+  background-color: #33312E;
+  border: none;
+  color: #FEF9EF;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.signInModal__form__email:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.signInModal__form__email::-webkit-input-placeholder {
+  color: #d9d9d9;
+}
+
+.signInModal__form__email:-ms-input-placeholder {
+  color: #d9d9d9;
+}
+
+.signInModal__form__email::-ms-input-placeholder {
+  color: #d9d9d9;
+}
+
+.signInModal__form__email::placeholder {
+  color: #d9d9d9;
+}
+
+.signInModal__form__pass {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: pass;
+  width: 12rem;
+  height: 4rem;
+  padding: 0rem 1.5rem;
+  margin-top: 0.7rem;
+  margin-right: 0.5rem;
+  background-color: #DB5461;
+  border: none;
+  border-radius: 10px;
+  color: #FEF9EF;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.signInModal__form__pass:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.signInModal__form__pass::-webkit-input-placeholder {
+  color: #d9d9d9;
+}
+
+.signInModal__form__pass:-ms-input-placeholder {
+  color: #d9d9d9;
+}
+
+.signInModal__form__pass::-ms-input-placeholder {
+  color: #d9d9d9;
+}
+
+.signInModal__form__pass::placeholder {
+  color: #d9d9d9;
+}
+
+.signInModal__form__submit {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: submit;
+  width: 4rem;
+  height: 4rem;
+  margin-top: 0.7rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #DB5461;
+  color: #FEF9EF;
+  font-size: 1rem;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.signInModal__form__submit:active {
+  margin-top: -1.5px;
+  -webkit-box-shadow: 1px 3px 0 #e6e6e6;
+          box-shadow: 1px 3px 0 #e6e6e6;
+}
+
+.signInModal__form__submit:focus {
+  outline: none;
+}
+
+.signInModal__form__submit:hover {
+  cursor: pointer;
+}
+
+.signInModal__oldUser {
+  text-decoration: underline;
+  font-weight: bold;
+  margin-bottom: -0.5rem;
+}
+
+.signInModal__oldUser:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .signInModal__form__email, .signInModal__form__pass {
+    width: 144px;
+    height: 48px;
+  }
+  .signInModal__form__submit {
+    width: 48px;
+    height: 48px;
+    font-size: 12px;
+  }
+  .signInModal__figure {
+    width: 90px;
+    height: auto;
+  }
+  .signInModal__exit {
+    padding: 1rem;
+    font-size: 12px;
+  }
+  .signInModal__oldUser {
+    padding: 1rem;
+  }
+}
+/*# sourceMappingURL=signIn.css.map */
