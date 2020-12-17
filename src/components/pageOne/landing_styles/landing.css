@@ -1,30 +1,56 @@
 .landing {
-  border: solid 1px red;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 3fr 3fr 1fr;
-      grid-template-columns: 3fr 3fr 1fr;
-  -ms-grid-rows: 20vh 50vh 30vh 100vh;
-      grid-template-rows: 20vh 50vh 30vh 100vh;
-      grid-template-areas: ". . signIn" "title figure ." ". . ." ". . .";
+  -ms-grid-columns: 10vw 40vw 40vw 10vw;
+      grid-template-columns: 10vw 40vw 40vw 10vw;
+  -ms-grid-rows: 10vh 60vh 30vh 150vh;
+      grid-template-rows: 10vh 60vh 30vh 150vh;
+      grid-template-areas: ". . . signIn" ". title figure ." ". text text ." ". . . .";
+}
+
+.landing__signIn {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: signIn;
+  border-radius: 10px;
+  font-size: 22px;
+  margin: 2rem 0 0 -4rem;
+  width: 108px;
+  height: 48px;
+  background-color: #33312E;
+  border: #33312E;
+  color: #FEF9EF;
 }
 
 .landing__mainText {
-  border: solid 1px red;
   -ms-grid-row: 2;
-  -ms-grid-column: 1;
+  -ms-grid-column: 2;
   grid-area: title;
-  margin-left: 8rem;
-  width: 27rem;
+  width: 40rem;
+  margin-bottom: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.landing__mainText p {
+.landing__mainText h1 {
   font-weight: bold;
-  font-size: 5rem;
+  font-size: 6.66rem;
+  margin: 3rem 0;
 }
 
 .landing__enter {
-  border: solid 1px red;
+  margin-right: 14rem;
   border-radius: 10px;
   color: #FEF9EF;
   background-color: #DB5461;
@@ -37,25 +63,68 @@
 
 .landing__figure {
   -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: figure;
-  width: 448px;
-  height: 288px;
-}
-
-.landing__signIn {
-  -ms-grid-row: 1;
   -ms-grid-column: 3;
-  grid-area: signIn;
+  grid-area: figure;
+  margin-left: 150px;
+  width: 29rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
-.landing__signIn__btn {
-  border-radius: 10px;
-  font-size: 22px;
-  width: 108px;
-  height: 48px;
-  background-color: #33312E;
-  border: #33312E;
-  color: #FEF9EF;
+.landing__infoText {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: text;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.landing__infoText h3 {
+  font-weight: 500;
+  font-size: 1.66rem;
+  line-height: 29px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .landing {
+    -ms-grid-columns: 10vw 80vw 10vw;
+        grid-template-columns: 10vw 80vw 10vw;
+    -ms-grid-rows: 10vh 40vh 20vh 30vh 150vh;
+        grid-template-rows: 10vh 40vh 20vh 30vh 150vh;
+        grid-template-areas: ". . signIn " ". title title " ". figure ." ". text ." ". . .";
+  }
+  .landing__signIn {
+    margin: 3rem 0 0 -10rem;
+  }
+  .landing__figure {
+    width: 23rem;
+    margin-left: -4rem;
+    justify-self: flex-end;
+  }
+  .landing__mainText {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    max-width: 100%;
+  }
+  .landing__mainText h1 {
+    font-size: 7rem;
+  }
+  .landing__enter {
+    margin-right: 0;
+  }
 }
 /*# sourceMappingURL=landing.css.map */

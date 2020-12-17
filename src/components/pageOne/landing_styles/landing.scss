@@ -1,35 +1,58 @@
 @import '../../../app_styles/variables';
 
+
+
 .landing{
-    border: solid 1px red;
 
     display: grid;
-    grid-template-columns: 3fr 3fr 1fr;
-    grid-template-rows: 20vh 50vh 30vh 100vh;
+    grid-template-columns: 10vw 40vw 40vw 10vw;
+    grid-template-rows: 10vh 60vh 30vh 150vh;
     grid-template-areas:
-        ". . signIn"
-        "title figure ."
-        ". . ."
-        ". . .";
+        ". . . signIn"
+        ". title figure ."
+        ". text text ."
+        ". . . .";
+        
+    &__signIn{
+        grid-area: signIn;
+        border-radius: 10px;
+        font-size: 22px;
+
+        margin: 2rem 0 0 -4rem;
+        width: 108px;
+        height: 48px;
+
+
+        background-color: $priColor;
+        border: $priColor;
+        color: $secColor;
+
+        
+    }
 
     &__mainText{
-        border: solid 1px red;
-
         grid-area: title;
-        margin-left: 8rem;
 
-        width: 27rem;
+        width: 40rem;
+
+        margin-bottom: 4rem;
         
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-        p {
+        h1 {
             font-weight: bold;
-            font-size: 5rem;
+            font-size: 6.66rem;
+            margin: 3rem 0 ;
         }
+
     }
 
         &__enter{
-            border: solid 1px red;
 
+            margin-right: 14rem;
             
             border-radius: 10px;
         
@@ -47,28 +70,79 @@
 
     &__figure{
         grid-area: figure;
-        // width: 5rem;
-        width: 448px;
-        height: 288px;
+
+        margin-left: 150px;
+        // margin-bottom:-50px;
+
+        width: 29rem;
+
+        align-self:flex-end;
+    }
+
+    &__infoText{
+        grid-area: text;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h3{
+            font-weight: 500;
+            font-size: 1.66rem;
+            line-height: 29px;
+            text-align: center;
+        }
+        
     }
 
 
-    &__signIn{
-        grid-area: signIn;
+}
 
-        &__btn{
-            border-radius: 10px;
-            font-size: 22px;
-    
-            width: 108px;
-            height: 48px;
 
-    
-            background-color: $priColor;
-            border: $priColor;
-            color: $secColor;
+//responsive 
+
+@media only screen and (max-width: 768px) {
+
+    .landing{
+        grid-template-columns: 10vw 80vw 10vw;
+        grid-template-rows: 10vh 40vh 20vh 30vh 150vh;
+        grid-template-areas:
+            ". . signIn "
+            ". title title "
+            ". figure ."
+            ". text ."
+            ". . .";
+
+        &__signIn{
+           margin: 3rem 0 0 -10rem;
+
         }
-       
+
+        &__figure{
+            width: 23rem;
+            margin-left: -4rem;
+            justify-self: flex-end;
+        }
+            
+        &__mainText{
+            align-items:flex-start;
+            max-width:100%;
+
+            h1{
+                font-size:7rem;
+            }
+        }
+
+            &__enter{
+                margin-right: 0;
+            }
+
+           
+
+
+
     }
 }
+
+
 

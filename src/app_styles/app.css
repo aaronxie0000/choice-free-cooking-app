@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 :root {
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
   font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: #FEF9EF;
   padding: 0;
@@ -11,5 +11,17 @@
 
 * {
   color: #33312E;
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    font-size: 9px;
+  }
 }
 /*# sourceMappingURL=app.css.map */
