@@ -6,7 +6,7 @@
       grid-template-columns: 10vw 40vw 40vw 10vw;
   -ms-grid-rows: 40vh 60vh;
       grid-template-rows: 40vh 60vh;
-      grid-template-areas: "day mainContent mainContent navBar" ". cardOne cardTwo .";
+      grid-template-areas: "day mainContent mainContent ." ". cardOne cardTwo .";
 }
 
 .chooseRecipe__cardOne {
@@ -26,10 +26,6 @@
 
 .chooseRecipe__cardOne__title {
   color: #FEF9EF;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   width: 14rem;
   font-weight: bold;
   font-size: 2.5rem;
@@ -39,10 +35,6 @@
 
 .chooseRecipe__cardOne__header {
   color: #FEF9EF;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   font-weight: 700;
   font-size: 1.2rem;
   text-align: center;
@@ -51,10 +43,6 @@
 
 .chooseRecipe__cardOne__desc {
   color: #FEF9EF;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   text-align: center;
 }
 
@@ -75,10 +63,6 @@
 
 .chooseRecipe__cardTwo__title {
   color: #FEF9EF;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   width: 14rem;
   font-weight: bold;
   font-size: 2.5rem;
@@ -88,10 +72,6 @@
 
 .chooseRecipe__cardTwo__header {
   color: #FEF9EF;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   font-weight: 700;
   font-size: 1.2rem;
   text-align: center;
@@ -100,10 +80,6 @@
 
 .chooseRecipe__cardTwo__desc {
   color: #FEF9EF;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   text-align: center;
 }
 
@@ -144,9 +120,9 @@
 }
 
 .chooseRecipe__nav {
-  -ms-grid-row: 1;
-  -ms-grid-column: 4;
-  grid-area: navBar;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -159,11 +135,10 @@
 }
 
 .chooseRecipe__nav__home {
-  margin: 1.5rem 0 0 -10rem;
-  border-radius: 10px;
-  font-size: 22px;
-  width: 108px;
-  height: 48px;
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+  width: 7rem;
+  height: 3.5rem;
   background-color: #DB5461;
   border: #DB5461;
   color: #FEF9EF;
@@ -181,11 +156,11 @@
 }
 
 .chooseRecipe__nav__signIn {
-  margin: 1.5rem 0 0 -10rem;
-  border-radius: 10px;
-  font-size: 22px;
-  width: 108px;
-  height: 48px;
+  margin-right: 3rem;
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+  width: 7rem;
+  height: 3.5rem;
   background-color: #33312E;
   border: #33312E;
   color: #FEF9EF;
@@ -233,8 +208,8 @@
 }
 
 .dayTech__no {
-  width: 3.7rem;
-  height: 3.7rem;
+  min-width: 3.7rem;
+  min-height: 3.7rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -255,5 +230,172 @@
   font-weight: bold;
   font-size: 2rem;
   margin: 1rem 1rem;
+}
+
+.changeDayPop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.changeDayPop__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: whitesmoke;
+  opacity: 0.8;
+  z-index: 999;
+}
+
+.changeDayPop__backBtn {
+  position: absolute;
+  padding: 2rem;
+  z-index: 1001;
+}
+
+.changeDayPop__backBtn:hover {
+  cursor: pointer;
+}
+
+.changeDayPop__backCircle {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  left: -3.8rem;
+  top: -4rem;
+  background-color: #DB5461;
+  border-radius: 50%;
+}
+
+.changeDayPop__dayOne {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  left: 10vw;
+  top: 14vh;
+  background-color: #DB5461;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.changeDayPop__dayOne:hover {
+  cursor: pointer;
+  background-color: #df6974;
+}
+
+.changeDayPop__dayOne h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  width: 4rem;
+  height: 5rem;
+  color: #FEF9EF;
+}
+
+.changeDayPop__dayTwo {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  left: 35vw;
+  top: 9vh;
+  background-color: #DB5461;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.changeDayPop__dayTwo:hover {
+  cursor: pointer;
+  background-color: #df6974;
+}
+
+.changeDayPop__dayTwo h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  width: 4rem;
+  height: 5rem;
+  color: #FEF9EF;
+}
+
+.changeDayPop__note {
+  position: absolute;
+  right: 5rem;
+  bottom: 4rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 35rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .chooseRecipe {
+    -ms-grid-columns: 10vw 80vw 10vw;
+        grid-template-columns: 10vw 80vw 10vw;
+    -ms-grid-rows: 15vh 25vh 30vh 30vh;
+        grid-template-rows: 15vh 25vh 30vh 30vh;
+        grid-template-areas: "day . ." ". mainContent ." " . cardOne ." ". cardTwo .";
+  }
+  .chooseRecipe__cardOne {
+    width: 100%;
+  }
+  .chooseRecipe__cardOne div {
+    margin-top: 0.2rem;
+    height: 90%;
+    overflow: hidden;
+  }
+  .chooseRecipe__cardTwo {
+    width: 100%;
+  }
+  .chooseRecipe__cardTwo div {
+    margin-top: 0.2rem;
+    height: 90%;
+    overflow: hidden;
+  }
+  .chooseRecipe__mainContent {
+    margin-top: -1rem;
+  }
+  .chooseRecipe__title {
+    margin: 0;
+  }
+  .dayTech__desc {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .chooseRecipe__nav__signIn {
+    font-size: 2rem;
+    width: 9rem;
+    height: 4.5rem;
+  }
+  .chooseRecipe__nav__home {
+    font-size: 2rem;
+    width: 9rem;
+    height: 4.5rem;
+  }
+  .chooseRecipe__cardOne div {
+    margin-top: 1rem;
+  }
+  .chooseRecipe__cardTwo div {
+    margin-top: 1rem;
+  }
 }
 /*# sourceMappingURL=chooseRecipe.css.map */

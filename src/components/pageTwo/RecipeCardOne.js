@@ -1,14 +1,7 @@
-import React, { useContext } from 'react';
-import { RecipeContext } from '../../context/RecipeContext'
+import React from 'react';
 
 
 function RecipeCardOne({ recipeData: { recipeOneID, recipeOneTitle, recipeOneDesc } }) {
-    const [recipeID, updateRecipeID] = useContext(RecipeContext);
-
-    function passRecipeID() {
-        updateRecipeID(recipeOneID)
-    }
-
 
     return (
 

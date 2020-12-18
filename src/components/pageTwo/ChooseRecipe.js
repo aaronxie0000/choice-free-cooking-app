@@ -1,8 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import './chooseRecipe_styles/chooseRecipe.css'
-
 import SignIn from '../SignIn.js';
 import ChangeDay from './ChangeDay.js';
 import RecipeCardOne from './RecipeCardOne.js';
@@ -10,20 +8,28 @@ import RecipeCardTwo from './RecipeCardTwo.js';
 import DayTech from './DayTech.js'
 
 
-import firebase from '../../firebase.js'
 import { DayContext } from '../../context/DayContext.js';
+import { RecipeContext } from '../../context/RecipeContext'
+
+import './chooseRecipe_styles/chooseRecipe.css'
+
+import firebase from '../../firebase.js'
 
 
 
 function ChooseRecipe() {
-    const [loading, updateLoad] = useState(true)
+    const [loading, updateLoad] = useState(true);
+
     const [dayID, updateDay] = useContext(DayContext);
+    const [recipeID, updateRecipeID] = useContext(RecipeContext);
+
 
     const [dayData, updateDayData] = useState([]);
     const [recipeDataOne, updateRecipeOne] = useState({});
     const [recipeDataTwo, updateRecipeTwo] = useState({});
 
 
+    //fetching firestore data and assinging them to the states for storage
     useEffect(() => {
         updateLoad(true);
 
@@ -57,7 +63,7 @@ function ChooseRecipe() {
             })
 
 
-    }, []);
+    }, [dayID]);
 
 
 
@@ -71,11 +77,12 @@ function ChooseRecipe() {
         return (
             <div className='chooseRecipe'>
                 <div className='chooseRecipe__nav'>
-                    <div> <SignIn specificClassName={'chooseRecipe__nav__signIn'}></SignIn> </div>
+                    <SignIn specificClassName={'chooseRecipe__nav__signIn'}></SignIn>
                     <Link to='/' tyle={{ textDecoration: 'none' }}><button className={'chooseRecipe__nav__home'}>Home</button></Link>
                 </div>
 
-                <ChangeDay myClassName={'chooseRecipe__day'} changeDay={updateDay} curDay={dayID}></ChangeDay>
+                <ChangeDay myClassName={'chooseRecipe__day'} curDay={dayID}></ChangeDay>
+
                 <div className='chooseRecipe__mainContent'>
                     <h1 className='chooseRecipe__title'>Today's Focus</h1>
                     <div className='chooseRecipe__tech'>
@@ -83,8 +90,8 @@ function ChooseRecipe() {
                         <DayTech givenClassName='chooseRecipe__tech__two' techNo='2' techDesc={dayData.dayTech[1]}></DayTech>
                     </div>
                 </div>
-                <Link to='/recipes/one' className={'chooseRecipe__cardOne'} style={{ textDecoration: 'none' }}> <RecipeCardOne recipeData={recipeDataOne}></RecipeCardOne> </Link>
-                <Link to='/recipes/two' className={'chooseRecipe__cardTwo'} style={{ textDecoration: 'none' }}> <RecipeCardTwo recipeData={recipeDataTwo}></RecipeCardTwo> </Link>
+                <Link to='/recipes/one' className={'chooseRecipe__cardOne'} style={{ textDecoration: 'none' }} onClick={() => updateRecipeID(recipeDataOne.recipeOneID)}> <RecipeCardOne recipeData={recipeDataOne}></RecipeCardOne> </Link>
+                <Link to='/recipes/two' className={'chooseRecipe__cardTwo'} style={{ textDecoration: 'none' }} onClick={() => updateRecipeID(recipeDataTwo.recipeTwoID)}> <RecipeCardTwo recipeData={recipeDataTwo}></RecipeCardTwo> </Link>
             </div>
 
         )

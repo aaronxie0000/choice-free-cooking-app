@@ -1,24 +1,22 @@
-import React, {useRef} from 'react';
+import React, { useContext, useState } from 'react';
 
-function ChangeDay({curDay, changeDay, myClassName}){
+import { DayContext } from '../../context/DayContext.js';
 
-    const chooseDay = useRef();
+import ChangeDayModal from './ChangeDayModal.js'
 
-    function showChooseDay(){
-        console.log(chooseDay.current.className);
-        chooseDay.current.className = 'showChooseDay';
-        console.log(chooseDay.current.className);
-    }
+function ChangeDay({ myClassName }) {
+    const [dayID, updateDay] = useContext(DayContext);
+    const [isOpen, setIsOpen] = useState(false);
 
-    return(
-        <div className={myClassName}>
-            <h3 onClick={showChooseDay}>{curDay}</h3>
-            {/* These will use absoulte positioning, similar method as the sign in page */}
-            <div ref={chooseDay} className="hiddenChooseDay">
-                {/* here will have a back button that will again hide the choose day */}
+    return (
+        <>
+            <div onClick={()=>setIsOpen(true)} className={myClassName}>
+                <h3>{dayID}</h3>
             </div>
-        </div>
-        
+
+
+            <ChangeDayModal isOpen={isOpen} close={() => setIsOpen(false)} updateDay={updateDay}></ChangeDayModal>
+        </>
     )
 }
 

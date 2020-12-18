@@ -1,16 +1,8 @@
-import React, { useContext } from 'react';
-import {RecipeContext} from '../../context/RecipeContext'
+import React from 'react';
 
 function RecipeCardTwo( {recipeData: {recipeTwoID, recipeTwoTitle, recipeTwoDesc }}){
-    const [recipeID, updateRecipeID] = useContext(RecipeContext);
-    
 
-    function passRecipeID(){
-        updateRecipeID(recipeTwoID)
-    }
-
-
-
+   
     return(
 
         // move onClick={passRecipeID} up to the Link comp (which becomes an a comp); as that is the entire card, this div is just for styling
