@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 
-function ChooseDay(props){
+function ChangeDay({curDay, changeDay, myClassName}){
 
     const chooseDay = useRef();
 
@@ -11,8 +11,8 @@ function ChooseDay(props){
     }
 
     return(
-        <div>
-            <button onClick={showChooseDay}>Choose Day</button>
+        <div className={myClassName}>
+            <h3 onClick={showChooseDay}>{curDay}</h3>
             {/* These will use absoulte positioning, similar method as the sign in page */}
             <div ref={chooseDay} className="hiddenChooseDay">
                 {/* here will have a back button that will again hide the choose day */}
@@ -22,4 +22,4 @@ function ChooseDay(props){
     )
 }
 
-export default ChooseDay;
+export default ChangeDay;

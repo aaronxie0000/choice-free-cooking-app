@@ -1,0 +1,231 @@
+@import "../../../app_styles/variables";
+
+.chooseRecipe {
+    overflow: hidden;
+
+    display: grid;
+    // grid-template-columns: 1fr 5fr 5fr 1fr;
+    // grid-template-rows: min(1fr) 4fr 4fr;
+    grid-template-columns: 10vw 40vw 40vw 10vw;
+    grid-template-rows: 40vh 60vh;
+    grid-template-areas:
+        "day mainContent mainContent navBar"
+        ". cardOne cardTwo .";
+
+    &__cardOne {
+        grid-area: cardOne;
+
+        width: 38vw;
+        height: 90%;
+        background-color: $priColor;
+
+        border-radius: 1.5rem;
+        margin: 1rem;
+
+        div {
+            margin-top: 4rem;
+        }
+
+        &__title {
+            color: $secColor;
+            user-select: none;
+
+            width: 14rem;
+            font-weight: bold;
+            font-size: 2.5rem;
+            text-align: center;
+
+            margin: 0 auto;
+        }
+
+        &__header {
+            color: $secColor;
+            user-select: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        &__desc {
+            color: $secColor;
+            user-select: none;
+            text-align: center;
+        }
+    }
+
+    &__cardTwo {
+        grid-area: cardTwo;
+        width: 38vw;
+        height: 90%;
+        background-color: $triColor;
+
+        border-radius: 1.5rem;
+        margin: 1rem;
+
+        div {
+            margin-top: 4rem;
+        }
+
+        &__title {
+            color: $secColor;
+            user-select: none;
+
+            width: 14rem;
+            font-weight: bold;
+            font-size: 2.5rem;
+            text-align: center;
+
+            // because created a box (by using width, center in other method), text align is for within the box
+            margin: 0 auto;
+        }
+
+        &__header {
+            color: $secColor;
+            user-select: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        &__desc {
+            color: $secColor;
+            user-select: none;
+            text-align: center;
+        }
+    }
+
+    &__day {
+        grid-area: day;
+
+        width: 8.5rem;
+        height: 8.5rem;
+        border-radius: 50%;
+
+        margin: 1rem 0 0 1rem;
+
+        background-color: $triColor;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            cursor: pointer;
+            background-color: lighten($triColor, 5%);
+        }
+
+        h3 {
+            font-weight: bold;
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+
+            text-align: center;
+            width: 4rem;
+            height: 5rem;
+            margin: 0;
+            color: $secColor;
+        }
+    }
+
+    &__nav {
+        grid-area: navBar;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &__home {
+
+            margin: 1.5rem 0 0 -10rem;
+
+            border-radius: 10px;
+            font-size: 22px;
+
+            width: 108px;
+            height: 48px;
+
+            background-color: $triColor;
+            border: $triColor;
+            color: $secColor;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+            &:hover {
+                background-color: lighten($triColor, 5%);
+                cursor: pointer;
+            }
+        }
+
+        &__signIn {
+
+            margin: 1.5rem 0 0 -10rem;
+
+            border-radius: 10px;
+            font-size: 22px;
+
+            width: 108px;
+            height: 48px;
+
+            background-color: $priColor;
+            border: $priColor;
+            color: $secColor;
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+            &:hover {
+                background-color: lighten($priColor, 5%);
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__mainContent {
+        grid-area: mainContent;
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: bolder;
+
+        margin-top: 3rem;
+        padding-left: 6rem;
+    }
+
+    &__tech {
+        margin-top: 1rem;
+    }
+}
+
+.dayTech {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__no {
+        width: 3.7rem;
+        height: 3.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: $triColor;
+        color: $secColor;
+
+        font-size: 2.8rem;
+        border-radius: 0.8rem;
+
+        margin: 1rem 1rem;
+    }
+
+    &__desc {
+        font-weight: bold;
+        font-size: 2rem;
+        margin: 1rem 1rem;
+    }
+}

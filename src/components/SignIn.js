@@ -1,6 +1,5 @@
 import React, { useState} from 'react';
 import SignInModal from './SignInModal.js'
-import './signInStyles/signIn.css'
 
 
 function SignIn(props){

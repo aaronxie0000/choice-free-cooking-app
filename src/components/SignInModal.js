@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactDom from 'react-dom';
+import './signInStyles/signIn.css'
 // import {AiOutlineCheckCircle} from 'react-icons/ai'
 import undrawFigure2 from '../assets/undrawFigure2.svg'
 
