@@ -1,0 +1,148 @@
+.recipePanel {
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr;
+      grid-template-columns: 1fr 4fr;
+  -ms-grid-rows: 1fr 2fr;
+      grid-template-rows: 1fr 2fr;
+      grid-template-areas: "title mainContent" "theList mainContent";
+}
+
+.recipePanel__title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #33312E;
+}
+
+.recipePanel__title h1 {
+  width: 14rem;
+  height: 5rem;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #FEF9EF;
+}
+
+.recipePanel__title__back {
+  position: absolute;
+  left: 13px;
+  top: 5px;
+}
+
+.recipePanel__title__back img {
+  width: 1rem;
+  height: auto;
+}
+
+.recipePanel__list {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: theList;
+  background-color: #DB5461;
+}
+
+.recipePanel__list__title {
+  color: #FEF9EF;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.8rem;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.recipePanel__list ul {
+  list-style: none;
+  padding: 0 0.3rem;
+}
+
+.recipePanel__list ul li {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #FEF9EF;
+  padding: 2px 0;
+  text-align: center;
+}
+
+.recipePanel__content {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: mainContent;
+  border: 1px solid red;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "recipe notes" "tech concept";
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3rem;
+  row-gap: 7rem;
+  -webkit-column-gap: 7rem;
+          column-gap: 7rem;
+  margin-top: -1rem;
+}
+
+.recipePanel__content div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+
+.recipePanel__content div:hover {
+  cursor: pointer;
+}
+
+.recipePanel__content div h3 {
+  font-size: 2rem;
+}
+
+.recipePanel__content__instruct {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: recipe;
+}
+
+.recipePanel__content__notes {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: notes;
+}
+
+.recipePanel__content__technique {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: tech;
+}
+
+.recipePanel__content__concept {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: concept;
+}
+/*# sourceMappingURL=recipe.css.map */

@@ -1,0 +1,123 @@
+@import "../../../app_styles/variables";
+
+.recipePanel {
+    width: 100vw;
+    height: 100vh;
+    
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+        "title mainContent"
+        "theList mainContent";
+
+    &__title {
+        grid-area: title;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: $priColor;
+        h1 {
+            width: 14rem;
+            height: 5rem;
+            font-size: 2.5rem;
+            text-align: center;
+            color: $secColor;
+        }
+
+        &__back {
+            position: absolute;
+            left: 13px;
+            top: 5px;
+
+            img {
+                width: 1rem;
+                height: auto;
+            }
+        }
+    }
+
+    &__list {
+        grid-area: theList;
+
+        background-color: $triColor;
+
+        &__title {
+            color: $secColor;
+            text-align: center;
+
+            font-weight: 500;
+            font-size: 1.8rem;
+            text-decoration-line: underline;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0 0.3rem;
+            li {
+                font-weight: 500;
+                font-size: 1rem;
+                color: $secColor;
+                padding: 2px 0;
+                text-align: center;
+            }
+        }
+    }
+
+    &__content {
+        grid-area: mainContent;
+
+        border: 1px solid red;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "recipe notes"
+            "tech concept";
+
+        justify-items: center; 
+        align-items: center; 
+
+        padding:3rem;
+        row-gap: 7rem;
+        column-gap: 7rem;
+        margin-top: -1rem;
+
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+            height: 100%;
+            box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            h3{
+                font-size: 2rem;
+            }
+        }
+
+        &__instruct{
+            grid-area: recipe;
+        }
+
+        &__notes{
+            grid-area: notes;
+        }
+
+        &__technique{
+            grid-area: tech;
+        }
+
+        &__concept{
+            grid-area: concept;
+        }
+    }
+}
