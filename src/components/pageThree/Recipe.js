@@ -13,7 +13,7 @@ import backArrow from '../../assets/arrow3.svg'
 
 
 //to recipe components because the left and right options are styled differently
-function RecipeOne() {
+function Recipe() {
 
 
     const [loading, updateLoad] = useState(true)
@@ -90,11 +90,11 @@ function RecipeOne() {
                 </div>
 
                 <Switch>
-                    <Route exact path='/recipes/one'><ChooseContent></ChooseContent></Route>
-                    <Route path='/recipes/one/detail'> <Details recipeData={recipeData}></Details> </Route>
-                    <Route path='/recipes/one/notes'> <Notes recipeData={recipeData}></Notes></Route>
-                    <Route path='/recipes/one/tech' > <Tech recipeData={recipeData}></Tech></Route>
-                    <Route path='/recipes/one/concept'><Concept recipeData={recipeData}></Concept></Route>
+                    <Route exact path='/recipes/selected'><ChooseContent></ChooseContent></Route>
+                    <Route path='/recipes/selected/detail'> <Details recipeData={recipeData}></Details> </Route>
+                    <Route path='/recipes/selected/notes'> <Notes recipeData={recipeData}></Notes></Route>
+                    <Route path='/recipes/selected/tech' > <Tech recipeData={recipeData}></Tech></Route>
+                    <Route path='/recipes/selected/concept'><Concept recipeData={recipeData}></Concept></Route>
 
                 </Switch>
 
@@ -110,16 +110,16 @@ function ChooseContent() {
 
     return (
         <div className="recipePanel__content">
-            <Link to='/recipes/one/detail' className="recipeContent__instruct">
+            <Link to='/recipes/selected/detail' className="recipeContent__instruct">
                 <h3>The Recipe</h3>
             </Link>
-            <Link to='/recipes/one/notes' className="recipeContent__notes">
+            <Link to='/recipes/selected/notes' className="recipeContent__notes">
                 <h3>Quick Notes</h3>
             </Link>
-            <Link to='/recipes/one/tech' className="recipeContent__technique">
+            <Link to='/recipes/selected/tech' className="recipeContent__technique">
                 <h3>Technique Notes</h3>
             </Link>
-            <Link to='/recipes/one/concept' className="recipeContent__concept">
+            <Link to='/recipes/selected/concept' className="recipeContent__concept">
                 <h3>Concept Notes</h3>
             </Link>
         </div>
@@ -132,7 +132,7 @@ function Details(props) {
 
     return (
         <div className='recipeDetail'>
-            <Link to='/recipes/one' className="recipeDetail__back">X</Link>
+            <Link to='/recipes/selected' className="recipeDetail__back">X</Link>
             <h1 className='recipeDetail__header'>The Recipe</h1>
             <iframe className="recipeDetail__video" title="recipe video" src="https://www.youtube.com/embed/tgbNymZ7vqY"> </iframe>
             <div className="recipeDetail__notes">
@@ -148,7 +148,7 @@ function Details(props) {
 function Notes(props) {
     return (
         <div className="recipeNotes">
-            <Link to='/recipes/one' className="recipeDetail__back">X</Link>
+            <Link to='/recipes/selected' className="recipeDetail__back">X</Link>
             <h1 className='recipeNotes__header'>Summary</h1>
         </div>
     )
@@ -157,7 +157,7 @@ function Notes(props) {
 function Tech(props) {
     return (
         <div className="recipeTech">
-            <Link to='/recipes/one' className="recipeDetail__back">X</Link>
+            <Link to='/recipes/selected' className="recipeDetail__back">X</Link>
             <h1 className='recipeTech__header'>Techniques</h1>
         </div>
     )
@@ -166,10 +166,10 @@ function Tech(props) {
 function Concept(props) {
     return (
         <div className="recipeConcept">
-            <Link to='/recipes/one' className="recipeDetail__back">X</Link>
+            <Link to='/recipes/selected' className="recipeDetail__back">X</Link>
             <h1 className='recipeConcept__header'>Concept</h1>
         </div>
     )
 }
 
-export default RecipeOne;
+export default Recipe;

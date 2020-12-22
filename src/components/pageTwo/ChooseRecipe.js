@@ -90,8 +90,8 @@ function ChooseRecipe() {
                         <DayTech givenClassName='chooseRecipe__tech__two' techNo='2' techDesc={dayData.dayTech[1]}></DayTech>
                     </div>
                 </div>
-                <Link to='/recipes/one' className={'chooseRecipe__cardOne'} style={{ textDecoration: 'none' }} onClick={() => updateRecipeID(recipeDataOne.recipeOneID)}> <RecipeCardOne recipeData={recipeDataOne}></RecipeCardOne> </Link>
-                <Link to='/recipes/two' className={'chooseRecipe__cardTwo'} style={{ textDecoration: 'none' }} onClick={() => updateRecipeID(recipeDataTwo.recipeTwoID)}> <RecipeCardTwo recipeData={recipeDataTwo}></RecipeCardTwo> </Link>
+                <Link to='/recipes/selected' className={'chooseRecipe__cardOne'} style={{ textDecoration: 'none' }} onClick={() => updateRecipeID(recipeDataOne.recipeOneID)}> <RecipeCardOne recipeData={recipeDataOne}></RecipeCardOne> </Link>
+                <Link to='/recipes/selected' className={'chooseRecipe__cardTwo'} style={{ textDecoration: 'none' }} onClick={() => updateRecipeID(recipeDataTwo.recipeTwoID)}> <RecipeCardTwo recipeData={recipeDataTwo}></RecipeCardTwo> </Link>
             </div>
 
         )

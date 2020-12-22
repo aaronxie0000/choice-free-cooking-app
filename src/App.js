@@ -1,8 +1,7 @@
 
 import Landing from './components/pageOne/Landing.js';
 import ChooseRecipe from './components/pageTwo/ChooseRecipe.js';
-import RecipeOne from './components/pageThree/RecipeOne.js';
-import RecipeTwo from './components/pageThree/RecipeTwo.js';
+import Recipe from './components/pageThree/Recipe.js';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -21,9 +20,9 @@ function App() {
             <Switch>
               <Route path='/' exact component={Landing}></Route>
               <Route path='/recipes' exact component={ChooseRecipe}></Route>
+
               {/* !!! Not exact for the following two, as using nested router */}
-              <Route path='/recipes/one' component={RecipeOne}></Route>
-              <Route path='/recipes/two' component={RecipeTwo}></Route>
+              <Route path='/recipes/selected' component={Recipe}></Route>
             </Switch>
           </Router>
         </div>
