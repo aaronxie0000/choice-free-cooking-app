@@ -35,6 +35,8 @@ function ChooseRecipe() {
 
         const tempRecipeData = []
 
+        console.log('fetch data');
+
         firebase.firestore().collection('recipeSelect').where('day', '==', dayID)
             .onSnapshot((querySnapshot) => {
                 querySnapshot.forEach((doc) => {

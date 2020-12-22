@@ -31,6 +31,8 @@ function Recipe() {
     useEffect(() => {
         updateLoad(true);
 
+        console.log('fetch data');
+
         var unsubscribe = firebase.firestore().collection('recipeDetail').where('recipeID', '==', recipeID || 0)
             .onSnapshot((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
