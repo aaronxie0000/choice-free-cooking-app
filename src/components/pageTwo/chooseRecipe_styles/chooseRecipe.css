@@ -277,7 +277,7 @@
   width: 10rem;
   height: 10rem;
   left: 10vw;
-  top: 14vh;
+  top: 9vh;
   background-color: #DB5461;
   border-radius: 50%;
   display: -webkit-box;
@@ -308,7 +308,7 @@
   position: absolute;
   width: 10rem;
   height: 10rem;
-  left: 35vw;
+  left: 25vw;
   top: 9vh;
   background-color: #DB5461;
   border-radius: 50%;
@@ -377,6 +377,64 @@
   }
   .dayTech__desc {
     font-size: 1.5rem;
+  }
+  .changeDayPop__dayOne {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    left: 10vw;
+    top: 8.5vh;
+    background-color: #DB5461;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .changeDayPop__dayOne:hover {
+    cursor: pointer;
+    background-color: #df6974;
+  }
+  .changeDayPop__dayOne h3 {
+    font-weight: bold;
+    font-size: 2rem;
+    width: 4rem;
+    height: 5rem;
+    color: #FEF9EF;
+  }
+  .changeDayPop__dayTwo {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    left: 40vw;
+    top: 9vh;
+    background-color: #DB5461;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .changeDayPop__dayTwo:hover {
+    cursor: pointer;
+    background-color: #df6974;
+  }
+  .changeDayPop__dayTwo h3 {
+    font-weight: bold;
+    font-size: 2rem;
+    width: 4rem;
+    height: 5rem;
+    color: #FEF9EF;
   }
 }
 

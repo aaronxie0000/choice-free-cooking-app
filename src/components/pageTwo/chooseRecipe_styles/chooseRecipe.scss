@@ -300,14 +300,13 @@
         border-radius: 50%;
     }
 
-
     
     &__dayOne {
-        @include dayCircle(10vw, 14vh)
+        @include dayCircle(10vw, 9vh)
     }
 
     &__dayTwo {
-        @include dayCircle(35vw, 9vh)
+        @include dayCircle(25vw, 9vh)
     }
 
 
@@ -368,6 +367,18 @@
             font-size: 1.5rem;
         }
     }
+
+    .changeDayPop {
+        &__dayOne{
+            @include dayCircle(10vw, 8.5vh)
+        }
+
+        &__dayTwo{
+            @include dayCircle(40vw, 9vh)
+        }
+    }
+    
+
 }
 
 @media only screen and (max-width: 600px) {

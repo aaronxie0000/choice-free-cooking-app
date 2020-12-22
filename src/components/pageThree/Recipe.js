@@ -71,12 +71,6 @@ function Recipe() {
                     <h1>{recipeData.recipeTitle}</h1>
                 </div>
                 <div className="recipePanel__list">
-                    <h3 className="recipePanel__list__title">Ingredients</h3>
-                    <ul>
-                        {recipeData.steps.map((step, index) => {
-                            return <li key={index}>{step}</li>
-                        })}
-                    </ul>
 
                     <h3 className="recipePanel__list__title">Equipment</h3>
                     <ul>
@@ -85,8 +79,13 @@ function Recipe() {
                         })}
                     </ul>
 
-
-
+                    <h3 className="recipePanel__list__title">Ingredients</h3>
+                    <ul>
+                        {recipeData.steps.map((step, index) => {
+                            return <li key={index}>{step}</li>
+                        })}
+                    </ul>
+                    
                 </div>
 
                 <Switch>
@@ -95,6 +94,8 @@ function Recipe() {
                     <Route path='/recipes/selected/notes'> <Notes recipeData={recipeData}></Notes></Route>
                     <Route path='/recipes/selected/tech' > <Tech recipeData={recipeData}></Tech></Route>
                     <Route path='/recipes/selected/concept'><Concept recipeData={recipeData}></Concept></Route>
+                    <Route path='/recipes/selected/ingredients'> <Ingredients recipeData={recipeData}></Ingredients> </Route>
+
 
                 </Switch>
 
@@ -110,21 +111,35 @@ function ChooseContent() {
 
     return (
         <div className="recipePanel__content">
-            <Link to='/recipes/selected/detail' className="recipeContent__instruct">
+            <Link to="/recipes/selected/ingredients" className="recipePanel__content__ingredients">
+                <h3>Ingreidents</h3>
+            </Link>
+            <Link to='/recipes/selected/detail' className="recipePanel__content__instruct">
                 <h3>The Recipe</h3>
             </Link>
-            <Link to='/recipes/selected/notes' className="recipeContent__notes">
+            <Link to='/recipes/selected/notes' className="recipePanel__content__notes">
                 <h3>Quick Notes</h3>
             </Link>
-            <Link to='/recipes/selected/tech' className="recipeContent__technique">
+            <Link to='/recipes/selected/tech' className="recipePanel__content__technique">
                 <h3>Technique Notes</h3>
             </Link>
-            <Link to='/recipes/selected/concept' className="recipeContent__concept">
+            <Link to='/recipes/selected/concept' className="recipePanel__content__concept">
                 <h3>Concept Notes</h3>
             </Link>
         </div>
     )
 }
+
+
+function Ingredients(props) {
+    return (
+        <div className="recipeIngredients">
+            <Link to='/recipes/selected' className="recipeIngredients__back">X</Link>
+            <h1 className='recipeIngredients__header'>Ingredients</h1>
+        </div>
+    )
+}
+
 
 function Details(props) {
 

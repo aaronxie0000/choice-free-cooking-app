@@ -1,5 +1,8 @@
 @import "../../../app_styles/variables";
 
+
+//unopened cards
+
 .recipePanel {
     width: 100vw;
     height: 100vh;
@@ -18,10 +21,10 @@
         justify-content: center;
         align-items: center;
 
+
         background-color: $priColor;
         h1 {
             width: 14rem;
-            height: 5rem;
             font-size: 2.5rem;
             text-align: center;
             color: $secColor;
@@ -107,6 +110,10 @@
             }
         }
 
+        &__ingredients{
+            display: none !important
+        }
+
         &__instruct {
             grid-area: recipe;
         }
@@ -125,12 +132,12 @@
     }
 }
 
-// the detail components
+// the detail/opened cards
 
+//same across all cards
 @mixin contentScreen() {
     grid-area: mainContent;
     width: 90%;
-    height: 90%;
     margin: auto auto;
 
     padding: 1rem;
@@ -155,18 +162,22 @@
     &__back {
        text-decoration: none;
         color: $triColor;
-        width: 5rem;
-        height: auto;
+        padding:1.6rem;
 
         position: absolute;
-        left: 13px;
-        top: 5px;
+        left: 0px;
+        top: 0px;
+
+        font-weight: bolder;
+        font-size: 1.5rem;
     }
 }
 
 
+//specific stylings
 .recipeDetail {
     @include contentScreen();
+    height: 90%;
 
     &__header {
         margin-bottom: 3rem;
@@ -198,18 +209,99 @@
 
 .recipeNotes {
     @include contentScreen();
-
+    height: 90%;
   
 }
 
 .recipeTech {
     @include contentScreen();
-
+    height: 90%;
    
 }
 
 .recipeConcept {
     @include contentScreen();
-
+    height: 90%;
   
+}
+
+.recipeIngredients{
+    @include contentScreen();
+    height: 90%;
+  
+}
+
+//responsive
+@media only screen and (max-width: 768px) {
+    .recipePanel{
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 10fr;
+        grid-template-areas:
+            "title"
+            "mainContent";
+
+    &__content {
+        grid-area: mainContent;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(1fr,5);
+        grid-template-areas:
+            'ingred'
+            "recipe"
+            "notes"
+            "tech"
+            "concept";
+
+        padding: 0.5rem;
+        row-gap: 2rem;
+        column-gap: 2rem;
+        margin: 0;
+
+        a{
+            width: 60%;
+            height: 30vh;
+        }
+
+        &__ingredients{
+            display:flex !important;
+            grid-area: ingred;
+        }
+
+    }
+
+    &__title {
+        height: 18rem;
+        margin-bottom: 3rem;
+
+
+        &__back {
+            position: absolute;
+            left: 20px;
+            top: 15px;
+        }
+    }
+
+    &__list{
+        display: none;
+    }
+
+    }
+
+    .recipeDetail, .recipeNotes, .recipeTech, .recipeConcept, .recipeIngredients{
+        height: fit-content;
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+    .recipePanel{
+        &__content{
+            a{
+                width: 80%;
+            }
+
+        }
+    }
 }
