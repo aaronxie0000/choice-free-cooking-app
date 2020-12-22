@@ -1,14 +1,15 @@
+
 import React, { useState, useContext, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { RecipeContext } from '../../context/RecipeContext.js'
 import { useHistory } from "react-router-dom";
+import firebase from '../../firebase.js'
+
+import { RecipeContext } from '../../context/RecipeContext.js'
+
 import './recipe_styles/recipe.css'
 import backArrow from '../../assets/arrow3.svg'
 
-import { AnimateSharedLayout } from "framer-motion"
-
-
-import firebase from '../../firebase.js'
 
 
 //to recipe components because the left and right options are styled differently
@@ -84,28 +85,91 @@ function RecipeOne() {
                         })}
                     </ul>
 
+
+
                 </div>
 
+                <Switch>
+                    <Route exact path='/recipes/one'><ChooseContent></ChooseContent></Route>
+                    <Route path='/recipes/one/detail'> <Details recipeData={recipeData}></Details> </Route>
+                    <Route path='/recipes/one/notes'> <Notes recipeData={recipeData}></Notes></Route>
+                    <Route path='/recipes/one/tech' > <Tech recipeData={recipeData}></Tech></Route>
+                    <Route path='/recipes/one/concept'><Concept recipeData={recipeData}></Concept></Route>
 
-                <div className="recipePanel__content">
-                    <div className="recipeContent__instruct">
-                        <h3>The Recipe</h3>
-                    </div>
-                    <div className="recipeContent__notes">
-                        <h3>Quick Notes</h3>
-                    </div>
-                    <div className="recipeContent__technique">
-                        <h3>Technique Notes</h3>
-                    </div>
-                    <div className="recipeContent__concept">
-                       <h3>Concept Notes</h3>
-                    </div>
+                </Switch>
 
-                </div>
             </div>
         )
     }
 
+}
+
+
+
+function ChooseContent() {
+
+    return (
+        <div className="recipePanel__content">
+            <Link to='/recipes/one/detail' className="recipeContent__instruct">
+                <h3>The Recipe</h3>
+            </Link>
+            <Link to='/recipes/one/notes' className="recipeContent__notes">
+                <h3>Quick Notes</h3>
+            </Link>
+            <Link to='/recipes/one/tech' className="recipeContent__technique">
+                <h3>Technique Notes</h3>
+            </Link>
+            <Link to='/recipes/one/concept' className="recipeContent__concept">
+                <h3>Concept Notes</h3>
+            </Link>
+        </div>
+    )
+}
+
+function Details(props) {
+
+    console.log(props.recipeData)
+
+    return (
+        <div className='recipeDetail'>
+            <Link to='/recipes/one' className="recipeDetail__back">X</Link>
+            <h1 className='recipeDetail__header'>The Recipe</h1>
+            <iframe className="recipeDetail__video" title="recipe video" src="https://www.youtube.com/embed/tgbNymZ7vqY"> </iframe>
+            <div className="recipeDetail__notes">
+                <h1>Notes</h1>
+                <ul>
+                    <li>Please be careful</li>
+                </ul>
+            </div>
+        </div>
+    )
+}
+
+function Notes(props) {
+    return (
+        <div className="recipeNotes">
+            <Link to='/recipes/one' className="recipeDetail__back">X</Link>
+            <h1 className='recipeNotes__header'>Summary</h1>
+        </div>
+    )
+}
+
+function Tech(props) {
+    return (
+        <div className="recipeTech">
+            <Link to='/recipes/one' className="recipeDetail__back">X</Link>
+            <h1 className='recipeTech__header'>Techniques</h1>
+        </div>
+    )
+}
+
+function Concept(props) {
+    return (
+        <div className="recipeConcept">
+            <Link to='/recipes/one' className="recipeDetail__back">X</Link>
+            <h1 className='recipeConcept__header'>Concept</h1>
+        </div>
+    )
 }
 
 export default RecipeOne;

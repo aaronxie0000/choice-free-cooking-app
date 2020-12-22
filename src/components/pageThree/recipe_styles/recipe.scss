@@ -3,10 +3,10 @@
 .recipePanel {
     width: 100vw;
     height: 100vh;
-    
+
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 2.5fr;
     grid-template-areas:
         "title mainContent"
         "theList mainContent";
@@ -44,6 +44,8 @@
 
         background-color: $triColor;
 
+        padding: 0 2rem;
+
         &__title {
             color: $secColor;
             text-align: center;
@@ -69,8 +71,6 @@
     &__content {
         grid-area: mainContent;
 
-        border: 1px solid red;
-
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -78,46 +78,138 @@
             "recipe notes"
             "tech concept";
 
-        justify-items: center; 
-        align-items: center; 
+        justify-items: center;
+        align-items: center;
 
-        padding:3rem;
-        row-gap: 7rem;
-        column-gap: 7rem;
+        padding: 3rem;
+        row-gap: 5rem;
+        column-gap: 5rem;
         margin-top: -1rem;
 
-        div{
+        // cause is Link as the div
+        a {
+            text-decoration: none;
             display: flex;
             justify-content: center;
             align-items: center;
 
+            border-radius: 0.8rem;
             width: 100%;
             height: 100%;
             box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
 
-            &:hover{
+            &:hover {
                 cursor: pointer;
             }
 
-            h3{
+            h3 {
                 font-size: 2rem;
             }
         }
 
-        &__instruct{
+        &__instruct {
             grid-area: recipe;
         }
 
-        &__notes{
+        &__notes {
             grid-area: notes;
         }
 
-        &__technique{
+        &__technique {
             grid-area: tech;
         }
 
-        &__concept{
+        &__concept {
             grid-area: concept;
         }
     }
+}
+
+// the detail components
+
+@mixin contentScreen() {
+    grid-area: mainContent;
+    width: 90%;
+    height: 90%;
+    margin: auto auto;
+
+    padding: 1rem;
+
+    box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
+
+    border-radius: 0.8rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: scroll;
+
+    position: relative;
+
+    &__header{
+        margin-bottom: 3rem;
+        text-decoration: underline;
+    }
+
+    &__back {
+       text-decoration: none;
+        color: $triColor;
+        width: 5rem;
+        height: auto;
+
+        position: absolute;
+        left: 13px;
+        top: 5px;
+    }
+}
+
+
+.recipeDetail {
+    @include contentScreen();
+
+    &__header {
+        margin-bottom: 3rem;
+    }
+
+    &__video {
+        min-width: 80%;
+        min-height: 50vh;
+        border: none;
+        margin-bottom: 5rem;
+    }
+
+    &__notes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+    }
+
+}
+
+.recipeNotes {
+    @include contentScreen();
+
+  
+}
+
+.recipeTech {
+    @include contentScreen();
+
+   
+}
+
+.recipeConcept {
+    @include contentScreen();
+
+  
 }

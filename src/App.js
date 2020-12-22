@@ -21,8 +21,9 @@ function App() {
             <Switch>
               <Route path='/' exact component={Landing}></Route>
               <Route path='/recipes' exact component={ChooseRecipe}></Route>
-              <Route path='/recipes/one' exact component={RecipeOne}></Route>
-              <Route path='/recipes/two' exact component={RecipeTwo}></Route>
+              {/* !!! Not exact for the following two, as using nested router */}
+              <Route path='/recipes/one' component={RecipeOne}></Route>
+              <Route path='/recipes/two' component={RecipeTwo}></Route>
             </Switch>
           </Router>
         </div>

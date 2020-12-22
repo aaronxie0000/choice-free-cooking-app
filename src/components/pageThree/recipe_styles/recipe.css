@@ -3,10 +3,10 @@
   height: 100vh;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 4fr;
-      grid-template-columns: 1fr 4fr;
-  -ms-grid-rows: 1fr 2fr;
-      grid-template-rows: 1fr 2fr;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  -ms-grid-rows: 1fr 2.5fr;
+      grid-template-rows: 1fr 2.5fr;
       grid-template-areas: "title mainContent" "theList mainContent";
 }
 
@@ -50,6 +50,7 @@
   -ms-grid-column: 1;
   grid-area: theList;
   background-color: #DB5461;
+  padding: 0 2rem;
 }
 
 .recipePanel__list__title {
@@ -79,7 +80,6 @@
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
   grid-area: mainContent;
-  border: 1px solid red;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -92,13 +92,14 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 3rem;
-  row-gap: 7rem;
-  -webkit-column-gap: 7rem;
-          column-gap: 7rem;
+  row-gap: 5rem;
+  -webkit-column-gap: 5rem;
+          column-gap: 5rem;
   margin-top: -1rem;
 }
 
-.recipePanel__content div {
+.recipePanel__content a {
+  text-decoration: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,17 +109,18 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 0.8rem;
   width: 100%;
   height: 100%;
   -webkit-box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
           box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
 }
 
-.recipePanel__content div:hover {
+.recipePanel__content a:hover {
   cursor: pointer;
 }
 
-.recipePanel__content div h3 {
+.recipePanel__content a h3 {
   font-size: 2rem;
 }
 
@@ -144,5 +146,202 @@
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: concept;
+}
+
+.recipeDetail {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: mainContent;
+  width: 90%;
+  height: 90%;
+  margin: auto auto;
+  padding: 1rem;
+  -webkit-box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: scroll;
+  position: relative;
+}
+
+.recipeDetail__header {
+  margin-bottom: 3rem;
+  text-decoration: underline;
+}
+
+.recipeDetail__back {
+  text-decoration: none;
+  color: #DB5461;
+  width: 5rem;
+  height: auto;
+  position: absolute;
+  left: 13px;
+  top: 5px;
+}
+
+.recipeDetail__header {
+  margin-bottom: 3rem;
+}
+
+.recipeDetail__video {
+  min-width: 80%;
+  min-height: 50vh;
+  border: none;
+  margin-bottom: 5rem;
+}
+
+.recipeDetail__notes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.recipeDetail__notes h1 {
+  text-decoration: underline;
+}
+
+.recipeDetail__notes ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recipeNotes {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: mainContent;
+  width: 90%;
+  height: 90%;
+  margin: auto auto;
+  padding: 1rem;
+  -webkit-box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: scroll;
+  position: relative;
+}
+
+.recipeNotes__header {
+  margin-bottom: 3rem;
+  text-decoration: underline;
+}
+
+.recipeNotes__back {
+  text-decoration: none;
+  color: #DB5461;
+  width: 5rem;
+  height: auto;
+  position: absolute;
+  left: 13px;
+  top: 5px;
+}
+
+.recipeTech {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: mainContent;
+  width: 90%;
+  height: 90%;
+  margin: auto auto;
+  padding: 1rem;
+  -webkit-box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: scroll;
+  position: relative;
+}
+
+.recipeTech__header {
+  margin-bottom: 3rem;
+  text-decoration: underline;
+}
+
+.recipeTech__back {
+  text-decoration: none;
+  color: #DB5461;
+  width: 5rem;
+  height: auto;
+  position: absolute;
+  left: 13px;
+  top: 5px;
+}
+
+.recipeConcept {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: mainContent;
+  width: 90%;
+  height: 90%;
+  margin: auto auto;
+  padding: 1rem;
+  -webkit-box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 0.8rem 0.25rem rgba(0, 0, 0, 0.25);
+  border-radius: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: scroll;
+  position: relative;
+}
+
+.recipeConcept__header {
+  margin-bottom: 3rem;
+  text-decoration: underline;
+}
+
+.recipeConcept__back {
+  text-decoration: none;
+  color: #DB5461;
+  width: 5rem;
+  height: auto;
+  position: absolute;
+  left: 13px;
+  top: 5px;
 }
 /*# sourceMappingURL=recipe.css.map */
