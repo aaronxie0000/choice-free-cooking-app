@@ -11,8 +11,10 @@ import {UserContext} from '../context/UserContext'
 
 
 function SignInModal({ open, children, onClose }) {
-    const [oldUser, updateUserType] = useState(true)
+    const [oldUser, updateUserType] = useState(true);
     const [localUser, updateUser] = useContext(UserContext);
+    const [loading, updateLoad] = useState(false);
+
     // firebase.auth().currentUser
     const email = useRef();
     const pass = useRef();
@@ -35,13 +37,16 @@ function SignInModal({ open, children, onClose }) {
       });
 
     function manageUserData() {
+        console.log('1: manage user');
+
         if (localUser === null) return;
-        console.log('oldUser call'); 
-        console.log(localUser);
+        if(loading) return;
 
 
         if (oldUser) {
-            console.log('user log in, attain user\'s day') //had endless amounts of calls on this function, bug; generating sign in again and again
+            console.log('2: user log in, attain user\'s day') //had endless amounts of calls on this function, bug; generating sign in again and again
+            
+            updateLoad(true);
             firebase.firestore().collection('usersDay').where('uid', '==', localUser.uid)
                 .onSnapshot((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
@@ -50,25 +55,32 @@ function SignInModal({ open, children, onClose }) {
                     })
 
                 })
-
+            updateLoad(false);
         }
         else if (localUser != null) {
-            console.log('user sign up, made new user\'s day')
+            console.log('2: user sign up, made new user\'s day');
+            
+            updateLoad(true);
             firebase.firestore().collection('usersDay').add({
                 uid: localUser.uid,
                 day: dayID,
             })
-                .then()
-                .catch((err) => { console.log(err) })
+            .then()
+            .catch((err) => { console.log(err) })
+            updateLoad(false);
         }
     }
 
 
     function updateUserData() {
+        console.log('1: update user\'s day')
+
         if (localUser == null) return;
+        if(loading) return;
+        
+        console.log('2: update user\'s day')
 
-        console.log('update user\'s day')
-
+        updateLoad(true);
         firebase.firestore().collection('usersDay').where('uid', '==', localUser.uid).limit(1).get().then((query) => {
             if (query.docs[0] == null) return;
             const myDoc = query.docs[0];
@@ -80,6 +92,8 @@ function SignInModal({ open, children, onClose }) {
             // const newVal = currVal - minus;
             // thing.ref.update({value:newVal});
         })
+        updateLoad(false);
+
 
     }
 
