@@ -180,9 +180,7 @@
 }
 
 .signInModal__form__submit:active {
-  margin-top: -1.5px;
-  -webkit-box-shadow: 1px 3px 0 #e6e6e6;
-          box-shadow: 1px 3px 0 #e6e6e6;
+  background-color: #d02c3c;
 }
 
 .signInModal__form__submit:focus {

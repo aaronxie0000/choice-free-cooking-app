@@ -13,6 +13,12 @@ function SignInModal({ open, children, onClose }) {
         return null;
     }
 
+    function userSignIn(e){
+        e.preventDefault();
+        alert('Proper user sign in and profile features are still in development and will be deployed when ready!')
+        onClose();
+    }
+
 
     return ReactDom.createPortal(
         <>
@@ -22,7 +28,7 @@ function SignInModal({ open, children, onClose }) {
                 <img className="signInModal__figure" src={undrawFigure2} alt='Just a drawing'></img>
                 <div className='signInModal__mainText'>
                     <h1 className='signInModal__title'>{oldUser ? 'Sign In' : 'Welcome'}</h1>
-                    <form className="signInModal__form" onSubmit={(e) => e.preventDefault()}>
+                    <form className="signInModal__form" onSubmit={userSignIn}>
                         <input className="signInModal__form__email" type="email" placeholder="Email"></input>
                         <input className="signInModal__form__pass" type="password" placeholder="Password"></input>
                         <button className="signInModal__form__submit" type="submit">Submit</button>

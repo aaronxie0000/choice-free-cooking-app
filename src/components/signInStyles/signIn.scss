@@ -149,8 +149,7 @@
             justify-content: center;
 
             &:active {
-                margin-top: -1.5px;
-                box-shadow: 1px 3px 0 darken(#fff, 10%);
+                background-color: darken($triColor, 10%);
             }
 
             &:focus {
