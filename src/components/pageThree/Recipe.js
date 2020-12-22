@@ -169,23 +169,19 @@ function Details(props) {
             <div className="recipeDetail__notes">
                 <div className="recipeDetail__changes">
                     <h3>Changes</h3>
-                    <ul>
-                        {
-                            props.recipeData.changes.map((step, index) => {
-                                return <li key={index}>{step}</li>
-                            })
-                        }
+                    <ul>{
+                        props.recipeData.changes.map((step, index) => {
+                            return <li key={index}>{step}</li>
+                        })}
                     </ul>
                 </div>
 
                 <div className="recipeDetail__simplification">
                     <h3>Simplifications</h3>
                     <ul>
-                        {
-                            props.recipeData.simplification.map((step, index) => {
-                                return <li key={index}>{step}</li>
-                            })
-                        }
+                        {props.recipeData.simplification.map((step, index) => {
+                            return <li key={index}>{step}</li>
+                        })}
                     </ul>
                 </div>
             </div>
@@ -200,11 +196,9 @@ function Notes(props) {
             <h1 className='recipeNotes__header'>Summary</h1>
             <div className="recipeNotes__content">
                 <ul>
-                    {
-                        props.recipeData.notes.map((step, index) => {
+                    {props.recipeData.notes.map((step, index) => {
                             return <li key={index}>{step}</li>
-                        })
-                    }
+                    })}
                 </ul>
             </div>
         </div>
@@ -213,22 +207,19 @@ function Notes(props) {
 
 function Tech(props) {
 
-    console.log(props.recipeData.tech)
     return (
         <div className="recipeTech">
             <Link to='/recipes/selected' className="recipeDetail__back">X</Link>
             <h1 className='recipeTech__header'>Techniques</h1>
             <ul className="recipeTech__content">
-                {
-                    props.recipeData.tech.map((step, index) => {
-                        if (/^https/.test(step)) {
-                            return <iframe className='recipeTech__video' key={index} title={`technique video ${index}`} src={step} allowFullScreen> </iframe>
-                        }
-                        else {
-                            return <li key={index}>{step}</li>
-                        }
-                    })
-                }
+                {props.recipeData.tech.map((step, index) => {
+                    if (/^http/.test(step)) {
+                        return <iframe className='recipeTech__video' key={index} title={`technique video ${index}`} src={step} allowFullScreen> </iframe>
+                    }
+                    else {
+                        return <li key={index}>{step}</li>
+                    }
+                })}
             </ul>
 
         </div>
@@ -243,7 +234,7 @@ function Concept(props) {
             <ul className="recipeConcept__content">
                 {
                     props.recipeData.concept.map((step, index) => {
-                        if (index % 2 === 0) {
+                        if (/^http/.test(step)) {
                             return <iframe className='recipeConcept__video' key={index} title={`technique video ${index}`} src={step} allowFullScreen> </iframe>
                         }
                         else {

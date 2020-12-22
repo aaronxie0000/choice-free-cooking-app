@@ -121,6 +121,12 @@
   text-align: center;
 }
 
+.landing__hiddenArrow {
+  visibility: hidden;
+  -webkit-transition: visibility 0.3s;
+  transition: visibility 0.3s;
+}
+
 @media only screen and (max-width: 768px) {
   .landing {
     -ms-grid-columns: 10vw 80vw 10vw;

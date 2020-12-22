@@ -103,6 +103,11 @@
             text-align: center;
         }
     }
+
+    &__hiddenArrow{
+        visibility:hidden;
+        transition: visibility 0.3s;
+    }
 }
 
 //responsive
