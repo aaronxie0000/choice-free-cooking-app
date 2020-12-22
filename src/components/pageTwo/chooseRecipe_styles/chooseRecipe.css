@@ -308,7 +308,7 @@
   position: absolute;
   width: 10rem;
   height: 10rem;
-  left: 25vw;
+  left: 30vw;
   top: 9vh;
   background-color: #DB5461;
   border-radius: 50%;
@@ -329,6 +329,102 @@
 }
 
 .changeDayPop__dayTwo h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  width: 4rem;
+  height: 5rem;
+  color: #FEF9EF;
+}
+
+.changeDayPop__dayThree {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  left: 50vw;
+  top: 9vh;
+  background-color: #DB5461;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.changeDayPop__dayThree:hover {
+  cursor: pointer;
+  background-color: #df6974;
+}
+
+.changeDayPop__dayThree h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  width: 4rem;
+  height: 5rem;
+  color: #FEF9EF;
+}
+
+.changeDayPop__dayFour {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  left: 70vw;
+  top: 9vh;
+  background-color: #DB5461;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.changeDayPop__dayFour:hover {
+  cursor: pointer;
+  background-color: #df6974;
+}
+
+.changeDayPop__dayFour h3 {
+  font-weight: bold;
+  font-size: 2rem;
+  width: 4rem;
+  height: 5rem;
+  color: #FEF9EF;
+}
+
+.changeDayPop__dayFive {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  left: 10vw;
+  top: 35vh;
+  background-color: #DB5461;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.changeDayPop__dayFive:hover {
+  cursor: pointer;
+  background-color: #df6974;
+}
+
+.changeDayPop__dayFive h3 {
   font-weight: bold;
   font-size: 2rem;
   width: 4rem;
@@ -430,6 +526,93 @@
     background-color: #df6974;
   }
   .changeDayPop__dayTwo h3 {
+    font-weight: bold;
+    font-size: 2rem;
+    width: 4rem;
+    height: 5rem;
+    color: #FEF9EF;
+  }
+  .changeDayPop__dayThree {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    left: 70vw;
+    top: 9vh;
+    background-color: #DB5461;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .changeDayPop__dayThree:hover {
+    cursor: pointer;
+    background-color: #df6974;
+  }
+  .changeDayPop__dayThree h3 {
+    font-weight: bold;
+    font-size: 2rem;
+    width: 4rem;
+    height: 5rem;
+    color: #FEF9EF;
+  }
+  .changeDayPop__dayFour {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    left: 10vw;
+    top: 25vh;
+    background-color: #DB5461;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .changeDayPop__dayFour:hover {
+    cursor: pointer;
+    background-color: #df6974;
+  }
+  .changeDayPop__dayFour h3 {
+    font-weight: bold;
+    font-size: 2rem;
+    width: 4rem;
+    height: 5rem;
+    color: #FEF9EF;
+  }
+  .changeDayPop__dayFive {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    left: 40vw;
+    top: 25vh;
+    background-color: #DB5461;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .changeDayPop__dayFive:hover {
+    cursor: pointer;
+    background-color: #df6974;
+  }
+  .changeDayPop__dayFive h3 {
     font-weight: bold;
     font-size: 2rem;
     width: 4rem;

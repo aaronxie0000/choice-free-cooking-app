@@ -306,9 +306,21 @@
     }
 
     &__dayTwo {
-        @include dayCircle(25vw, 9vh)
+        @include dayCircle(30vw, 9vh)
     }
 
+    &__dayThree{
+        @include dayCircle(50vw, 9vh);
+    }
+
+    &__dayFour{
+        @include dayCircle(70vw, 9vh);
+    }
+
+    &__dayFive{
+        @include dayCircle(10vw, 35vh);
+
+    }
 
     &__note {
         position: absolute;
@@ -370,11 +382,24 @@
 
     .changeDayPop {
         &__dayOne{
-            @include dayCircle(10vw, 8.5vh)
+            @include dayCircle(10vw, 8.5vh);
         }
 
         &__dayTwo{
-            @include dayCircle(40vw, 9vh)
+            @include dayCircle(40vw, 9vh);
+        }
+
+        &__dayThree{
+            @include dayCircle(70vw, 9vh);
+        }
+
+        &__dayFour{
+            @include dayCircle(10vw, 25vh);
+        }
+
+        &__dayFive{
+            @include dayCircle(40vw, 25vh);
+
         }
     }
     
