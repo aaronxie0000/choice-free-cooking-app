@@ -7,27 +7,30 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import {DayProvider} from './context/DayContext';
 import { RecipeProvider } from './context/RecipeContext';
+import {UserProvider} from './context/UserContext'
 
 import './app_styles/app.css'
 
 function App() {
 
   return (
-    <DayProvider> 
-      <RecipeProvider> 
-        <div className="App">
-          <Router>
-            <Switch>
-              <Route path='/' exact component={Landing}></Route>
-              <Route path='/recipes' exact component={ChooseRecipe}></Route>
+    <UserProvider> 
+      <DayProvider> 
+        <RecipeProvider> 
+          <div className="App">
+            <Router>
+              <Switch>
+                <Route path='/' exact component={Landing}></Route>
+                <Route path='/recipes' exact component={ChooseRecipe}></Route>
 
-              {/* !!! Not exact for the following two, as using nested router */}
-              <Route path='/recipes/selected' component={Recipe}></Route>
-            </Switch>
-          </Router>
-        </div>
-      </RecipeProvider>
-   </DayProvider>
+                {/* !!! Not exact for the following two, as using nested router */}
+                <Route path='/recipes/selected' component={Recipe}></Route>
+              </Switch>
+            </Router>
+          </div>
+        </RecipeProvider>
+    </DayProvider>
+   </UserProvider>
 
   );
 }

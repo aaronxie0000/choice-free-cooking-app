@@ -14,10 +14,11 @@
     &__signIn {
         grid-area: signIn;
         border-radius: 10px;
-        font-size: 22px;
 
-        margin: 2rem 0 0 -4rem;
-        width: 108px;
+        margin: 2rem 0 0 -6rem;
+        font-size: 1.5rem;
+        min-width: 7rem;
+        max-width: 100%;
         height: 48px;
 
         background-color: $priColor;
@@ -125,6 +126,8 @@
 
         &__signIn {
             margin: 3rem 0 0 -10rem;
+            font-size: 2rem;
+            min-width: 9rem;
         }
 
         &__figure {
