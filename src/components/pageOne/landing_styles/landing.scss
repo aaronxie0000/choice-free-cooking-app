@@ -29,6 +29,8 @@
         border: $priColor;
         color: $secColor;
 
+        white-space: nowrap;
+
         &:focus {
             outline: none;
             box-shadow: none;
@@ -59,19 +61,22 @@
     }
 
     &__enter {
-        margin-right: 14rem;
+        margin-left: -14rem;
 
         border-radius: 10px;
-
+        
         color: $secColor;
         background-color: $triColor;
         border: $triColor;
 
-        width: 235.67px;
-        height: 61px;
+        min-width: 260px;
+        min-height: 61px;
 
         font-weight: bold;
         font-size: 40px;
+
+        white-space: nowrap;
+        padding: 1.5vh 3vw;
 
         &:focus {
             outline: none;
@@ -209,7 +214,6 @@
         &__signIn {
             margin: 3rem 0 0 -10rem;
             width: 120px;
-            white-space: nowrap;
         }
 
         &__figure {
@@ -228,9 +232,8 @@
         }
 
         &__enter {
-            margin-right: 0;
+            margin-left: 0;
             overflow: hidden;
-            white-space: nowrap;
         }
 
         &__exampleOnePic, &__exampleTwoPic{

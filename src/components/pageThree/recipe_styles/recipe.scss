@@ -36,8 +36,9 @@
             top: 5px;
 
             img {
-                width: 1rem;
+                width: 1.25rem;
                 height: auto;
+                padding: 0.5rem;
             }
         }
     }
@@ -364,6 +365,10 @@
             position: absolute;
             left: 20px;
             top: 15px;
+            img{
+                width: 2rem;
+                padding:1rem;
+            }
         }
     }
 

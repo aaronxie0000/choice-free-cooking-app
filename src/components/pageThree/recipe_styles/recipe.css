@@ -40,8 +40,9 @@
 }
 
 .recipePanel__title__back img {
-  width: 1rem;
+  width: 1.25rem;
   height: auto;
+  padding: 0.5rem;
 }
 
 .recipePanel__list {
@@ -568,6 +569,10 @@
     position: absolute;
     left: 20px;
     top: 15px;
+  }
+  .recipePanel__title__back img {
+    width: 2rem;
+    padding: 1rem;
   }
   .recipePanel__list {
     display: none;

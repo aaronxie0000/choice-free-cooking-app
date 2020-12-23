@@ -164,6 +164,7 @@
   background-color: #33312E;
   border: #33312E;
   color: #FEF9EF;
+  white-space: nowrap;
 }
 
 .chooseRecipe__nav__signIn:focus {
@@ -482,7 +483,6 @@
     width: auto;
   }
   .chooseRecipe__nav__signIn {
-    white-space: nowrap;
     overflow: hidden;
   }
   .changeDayPop__dayOne {

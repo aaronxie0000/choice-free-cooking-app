@@ -21,6 +21,7 @@
   background-color: #33312E;
   border: #33312E;
   color: #FEF9EF;
+  white-space: nowrap;
 }
 
 .landing__signIn:focus {
@@ -62,15 +63,17 @@
 }
 
 .landing__enter {
-  margin-right: 14rem;
+  margin-left: -14rem;
   border-radius: 10px;
   color: #FEF9EF;
   background-color: #DB5461;
   border: #DB5461;
-  width: 235.67px;
-  height: 61px;
+  min-width: 260px;
+  min-height: 61px;
   font-weight: bold;
   font-size: 40px;
+  white-space: nowrap;
+  padding: 1.5vh 3vw;
 }
 
 .landing__enter:focus {
@@ -212,7 +215,6 @@
   .landing__signIn {
     margin: 3rem 0 0 -10rem;
     width: 120px;
-    white-space: nowrap;
   }
   .landing__figure {
     width: 23rem;
@@ -229,9 +231,8 @@
     font-size: 7rem;
   }
   .landing__enter {
-    margin-right: 0;
+    margin-left: 0;
     overflow: hidden;
-    white-space: nowrap;
   }
   .landing__exampleOnePic, .landing__exampleTwoPic {
     margin: 0 auto;
