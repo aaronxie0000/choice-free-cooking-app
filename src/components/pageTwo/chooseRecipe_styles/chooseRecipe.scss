@@ -419,12 +419,14 @@
                 min-width: 11rem;
                 max-width: fit-content;
                 height: 4.5rem;
+                white-space: nowrap;
             }
 
             &__home {
                 font-size: 2rem;
                 width: 9rem;
                 height: 4.5rem;
+                white-space: nowrap;
             }
         }
 

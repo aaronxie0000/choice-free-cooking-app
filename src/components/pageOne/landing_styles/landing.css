@@ -255,11 +255,13 @@
   }
   .landing__signIn {
     width: 120px;
+    white-space: nowrap;
   }
   .landing__enter {
-    width: 280px;
-    overflow-x: hidden;
+    width: 270px;
+    overflow: hidden;
     white-space: nowrap;
+    padding: 0.5rem;
   }
 }
 /*# sourceMappingURL=landing.css.map */

@@ -636,11 +636,13 @@
     max-width: -moz-fit-content;
     max-width: fit-content;
     height: 4.5rem;
+    white-space: nowrap;
   }
   .chooseRecipe__nav__home {
     font-size: 2rem;
     width: 9rem;
     height: 4.5rem;
+    white-space: nowrap;
   }
   .chooseRecipe__cardOne div {
     margin-top: 1rem;
