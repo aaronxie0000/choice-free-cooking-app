@@ -197,9 +197,9 @@
   .landing {
     -ms-grid-columns: 10vw 80vw 10vw;
         grid-template-columns: 10vw 80vw 10vw;
-    -ms-grid-rows: 10vh 40vh 20vh 30vh 5vh 30vh 3vh 30vh 4vh 30vh 3vh 30vh 5vh 15vh;
-        grid-template-rows: 10vh 40vh 20vh 30vh 5vh 30vh 3vh 30vh 4vh 30vh 3vh 30vh 5vh 15vh;
-        grid-template-areas: ". . signIn " ". title title " ". figure ." ". text ." ". . ." ". onePic ." ". . ." ". oneText ." ". . ." ". twoPic ." ". . ." ". twoText ." ". . ." "footer footer footer";
+    -ms-grid-rows: 10vh 40vh 20vh 30vh 5vh 30vh 30vh 3vh 30vh 30vh 5vh 10vh;
+        grid-template-rows: 10vh 40vh 20vh 30vh 5vh 30vh 30vh 3vh 30vh 30vh 5vh 10vh;
+        grid-template-areas: ". . signIn " ". title title " ". figure ." ". text ." ". . ." ". onePic ." ". oneText ." ". . ." ". twoPic ." ". twoText ." ". . ." "footer footer footer";
   }
   .landing__signIn {
     margin: 3rem 0 0 -10rem;
@@ -231,6 +231,19 @@
     margin: 0 auto;
     text-align: center;
     max-width: 30rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .landing {
+    -ms-grid-columns: 10vw 80vw 10vw;
+        grid-template-columns: 10vw 80vw 10vw;
+    -ms-grid-rows: 10vh 40vh 20vh 30vh 5vh 25vh 30vh 3vh 25vh 30vh 5vh 10vh;
+        grid-template-rows: 10vh 40vh 20vh 30vh 5vh 25vh 30vh 3vh 25vh 30vh 5vh 10vh;
+        grid-template-areas: ". . signIn " ". title title " ". figure ." ". text ." ". . ." ". onePic ." ". oneText ." ". . ." ". twoPic ." ". twoText ." ". . ." "footer footer footer";
+  }
+  .landing__exampleOneText p, .landing__exampleTwoText p {
+    font-size: 1.5rem;
   }
 }
 /*# sourceMappingURL=landing.css.map */

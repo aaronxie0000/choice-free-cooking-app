@@ -69,7 +69,7 @@ function Landing() {
 
             <div className='landing__footer'>
                 <h3>Website by Aaron Xie</h3>
-                <p>Built with React.js and Firestore</p>
+                <p>Built with React.js and Firebase</p>
             </div>
 
 

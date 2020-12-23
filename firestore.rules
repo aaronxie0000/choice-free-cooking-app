@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+   match /usersDay/{doc}{
+    	allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
+    match /recipeDetail/{doc} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    match /recipeSelect/{doc}{
+     allow read: if true;
+      allow write: if false;
+    }
+    
+   
+  }
+}

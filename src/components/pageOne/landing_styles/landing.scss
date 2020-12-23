@@ -186,7 +186,7 @@
 @media only screen and (max-width: 768px) {
     .landing {
         grid-template-columns: 10vw 80vw 10vw;
-        grid-template-rows: 10vh 40vh 20vh 30vh 5vh 30vh 3vh 30vh 4vh 30vh 3vh 30vh 5vh 15vh;
+        grid-template-rows: 10vh 40vh 20vh 30vh 5vh 30vh 30vh 3vh 30vh 30vh 5vh 10vh;
         grid-template-areas:
             ". . signIn "
             ". title title "
@@ -194,11 +194,9 @@
             ". text ."
             ". . ."
             ". onePic ."
-            ". . ."
             ". oneText ."
             ". . ."
             ". twoPic ."
-            ". . ."
             ". twoText ."
             ". . ."
             "footer footer footer";
@@ -240,4 +238,33 @@
         }
        
     }
+}
+
+@media only screen and (max-width: 600px) {
+    .landing {
+        grid-template-columns: 10vw 80vw 10vw;
+        grid-template-rows: 10vh 40vh 20vh 30vh 5vh 25vh 30vh 3vh 25vh 30vh 5vh 10vh;
+        grid-template-areas:
+            ". . signIn "
+            ". title title "
+            ". figure ."
+            ". text ."
+            ". . ."
+            ". onePic ."
+            ". oneText ."
+            ". . ."
+            ". twoPic ."
+            ". twoText ."
+            ". . ."
+            "footer footer footer";
+            &__exampleOneText, &__exampleTwoText{
+        
+                p{
+                    font-size: 1.5rem;
+                }
+            }
+    }
+
+
+
 }
