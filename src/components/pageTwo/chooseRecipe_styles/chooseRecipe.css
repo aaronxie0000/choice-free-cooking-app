@@ -196,7 +196,7 @@
 }
 
 .chooseRecipe__fig {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   right: 0px;
 }
@@ -481,9 +481,6 @@
     height: 4rem;
     width: auto;
   }
-  .dayTech__desc {
-    font-size: 1.5rem;
-  }
   .changeDayPop__dayOne {
     position: absolute;
     width: 10rem;
@@ -634,7 +631,10 @@
 @media only screen and (max-width: 600px) {
   .chooseRecipe__nav__signIn {
     font-size: 2rem;
-    width: 9rem;
+    min-width: 11rem;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
     height: 4.5rem;
   }
   .chooseRecipe__nav__home {

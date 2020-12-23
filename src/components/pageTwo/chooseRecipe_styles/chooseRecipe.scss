@@ -193,8 +193,8 @@
     }
 
     &__fig{
-        position: absolute;
-        bottom: 0px;
+        position: fixed;
+        bottom:0px;
         right:0px;
     }
 }
@@ -385,12 +385,6 @@
         }
     }
 
-    .dayTech {
-        &__desc {
-            font-size: 1.5rem;
-        }
-    }
-
     .changeDayPop {
         &__dayOne{
             @include dayCircle(10vw, 8.5vh);
@@ -422,7 +416,8 @@
         &__nav {
             &__signIn {
                 font-size: 2rem;
-                width: 9rem;
+                min-width: 11rem;
+                max-width: fit-content;
                 height: 4.5rem;
             }
 

@@ -253,5 +253,8 @@
   .landing__exampleOneText h4, .landing__exampleTwoText h4 {
     font-size: 1.4rem;
   }
+  .landing__signIn {
+    width: 120px;
+  }
 }
 /*# sourceMappingURL=landing.css.map */
