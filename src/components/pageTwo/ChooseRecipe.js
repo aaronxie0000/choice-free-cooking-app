@@ -6,6 +6,7 @@ import ChangeDay from './ChangeDay.js';
 import RecipeCardOne from './RecipeCardOne.js';
 import RecipeCardTwo from './RecipeCardTwo.js';
 import DayTech from './DayTech.js'
+import undrawChar from '../../assets/undrawFigure3.svg';
 
 
 import { DayContext } from '../../context/DayContext.js';
@@ -94,6 +95,7 @@ function ChooseRecipe() {
                 </div>
                 <Link to='/recipes/selected' className={'chooseRecipe__cardOne'} style={{ textDecoration: 'none' }} onClick={() => updateRecipeID(recipeDataOne.recipeOneID)}> <RecipeCardOne recipeData={recipeDataOne}></RecipeCardOne> </Link>
                 <Link to='/recipes/selected' className={'chooseRecipe__cardTwo'} style={{ textDecoration: 'none' }} onClick={() => updateRecipeID(recipeDataTwo.recipeTwoID)}> <RecipeCardTwo recipeData={recipeDataTwo}></RecipeCardTwo> </Link>
+                <img className='chooseRecipe__fig' src={undrawChar} alt="just a character"></img>
             </div>
 
         )

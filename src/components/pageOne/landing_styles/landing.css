@@ -134,7 +134,7 @@
 }
 
 .landing__exampleOnePic img {
-  width: 40vw;
+  width: 39vw;
   height: auto;
 }
 
@@ -143,7 +143,7 @@
   -ms-grid-column: 3;
   grid-area: oneText;
   max-width: 30vw;
-  margin-left: 10rem;
+  margin-left: 7vw;
 }
 
 .landing__exampleOneText h2 {
@@ -174,7 +174,7 @@
   -ms-grid-column: 2;
   grid-area: twoText;
   max-width: 30vw;
-  margin-right: 3rem;
+  margin-left: 3vw;
 }
 
 .landing__exampleTwoText h2 {

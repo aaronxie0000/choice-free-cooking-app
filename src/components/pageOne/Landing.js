@@ -5,8 +5,8 @@ import './landing_styles/landing.css'
 
 import figure from '../../assets/undrawFigure.svg';
 import arrow from '../../assets/arrow.svg';
-import example1 from '../../assets/exampleOne.svg';
-import example2 from '../../assets/exampleTwo.svg';
+import example1 from '../../assets/exampleOne.png';
+import example2 from '../../assets/exampleTwo.png';
 
 
 function Landing() {
@@ -55,7 +55,7 @@ function Landing() {
 
             <div className='landing__exampleOneText'>
                 <h2>Your SparkNotes for Cooking</h2>
-                <h4>We went the mile, read the recipes, tested and tasted many dishes and put it all together for you. We help you navigate to the perfect dishes, like GoodReads for online recipes, but we also give summary and insights we have gathered like spark notes for cooking. We always credit and link to our sources. </h4>
+                <h4>We went the mile, read the recipes, tested and tasted many dishes and put it all together for you. We help you navigate to the perfect dishes, like GoodReads for online recipes, but we also give summary and insights we have gathered, like spark notes for cooking.</h4>
             </div>
 
             <div className='landing__exampleTwoPic'>

@@ -194,6 +194,13 @@
   font-size: 1.5rem;
 }
 
+.recipeIngredients__fig {
+  position: fixed;
+  bottom: 3px;
+  right: 5px;
+  height: 5rem;
+}
+
 .recipeIngredients__title {
   font-size: 1.5rem;
 }
@@ -245,6 +252,13 @@
   top: 0px;
   font-weight: bolder;
   font-size: 1.5rem;
+}
+
+.recipeDetail__fig {
+  position: fixed;
+  bottom: 3px;
+  right: 5px;
+  height: 5rem;
 }
 
 .recipeDetail__header {
@@ -346,6 +360,13 @@
   font-size: 1.5rem;
 }
 
+.recipeNotes__fig {
+  position: fixed;
+  bottom: 3px;
+  right: 5px;
+  height: 5rem;
+}
+
 .recipeNotes__content ul {
   list-style: upper-roman;
   list-style-position: inside;
@@ -394,6 +415,13 @@
   top: 0px;
   font-weight: bolder;
   font-size: 1.5rem;
+}
+
+.recipeTech__fig {
+  position: fixed;
+  bottom: 3px;
+  right: 5px;
+  height: 5rem;
 }
 
 .recipeTech__video {
@@ -464,6 +492,13 @@
   top: 0px;
   font-weight: bolder;
   font-size: 1.5rem;
+}
+
+.recipeConcept__fig {
+  position: fixed;
+  bottom: 3px;
+  right: 5px;
+  height: 5rem;
 }
 
 .recipeConcept__video {

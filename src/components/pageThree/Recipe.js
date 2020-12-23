@@ -9,6 +9,7 @@ import { RecipeContext } from '../../context/RecipeContext.js'
 
 import './recipe_styles/recipe.css'
 import backArrow from '../../assets/arrow3.svg'
+import undrawFig from '../../assets/undrawFigure3.svg';
 
 
 
@@ -151,7 +152,7 @@ function Ingredients(props) {
                     return <li key={index}>{step}</li>
                 })}
             </ul>
-
+            <img src={undrawFig} className="recipeIngredients__fig" alt="Cartoon Figure"></img>
         </div>
     )
 }
@@ -183,6 +184,7 @@ function Details(props) {
                     </ul>
                 </div>
             </div>
+            <img src={undrawFig} className="recipeDetail__fig" alt="Cartoon Figure"></img>
         </div>
     )
 }
@@ -190,7 +192,7 @@ function Details(props) {
 function Notes(props) {
     return (
         <div className="recipeNotes">
-            <Link to='/recipes/selected' className="recipeDetail__back">X</Link>
+            <Link to='/recipes/selected' className="recipeNotes__back">X</Link>
             <h1 className='recipeNotes__header'>Summary</h1>
             <div className="recipeNotes__content">
                 <ul>
@@ -199,6 +201,7 @@ function Notes(props) {
                     })}
                 </ul>
             </div>
+            <img src={undrawFig} className="recipeNotes__fig" alt="Cartoon Figure"></img>
         </div>
     )
 }
@@ -207,7 +210,7 @@ function Tech(props) {
 
     return (
         <div className="recipeTech">
-            <Link to='/recipes/selected' className="recipeDetail__back">X</Link>
+            <Link to='/recipes/selected' className="recipeTech__back">X</Link>
             <h1 className='recipeTech__header'>Techniques</h1>
             <ul className="recipeTech__content">
                 {props.recipeData.tech.map((step, index) => {
@@ -219,7 +222,7 @@ function Tech(props) {
                     }
                 })}
             </ul>
-
+            <img src={undrawFig} className="recipeTech__fig" alt="Cartoon Figure"></img>
         </div>
     )
 }
@@ -227,7 +230,7 @@ function Tech(props) {
 function Concept(props) {
     return (
         <div className="recipeConcept">
-            <Link to='/recipes/selected' className="recipeDetail__back">X</Link>
+            <Link to='/recipes/selected' className="recipeConcept__back">X</Link>
             <h1 className='recipeConcept__header'>Concept</h1>
             <ul className="recipeConcept__content">
                 {
@@ -241,7 +244,7 @@ function Concept(props) {
                     })
                 }
             </ul>
-
+            <img src={undrawFig} className="recipeConcept__fig" alt="Cartoon Figure"></img>
         </div>
     )
 }

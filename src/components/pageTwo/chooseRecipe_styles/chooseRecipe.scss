@@ -191,6 +191,12 @@
     &__tech {
         margin-top: 1rem;
     }
+
+    &__fig{
+        position: absolute;
+        bottom: 0px;
+        right:0px;
+    }
 }
 
 .dayTech {
@@ -371,6 +377,11 @@
 
         &__title {
             margin: 0;
+        }
+
+        &__fig{
+            height: 4rem;
+            width: auto;
         }
     }
 

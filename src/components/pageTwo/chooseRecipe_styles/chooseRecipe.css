@@ -195,6 +195,12 @@
   margin-top: 1rem;
 }
 
+.chooseRecipe__fig {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
 .dayTech {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -470,6 +476,10 @@
   }
   .chooseRecipe__title {
     margin: 0;
+  }
+  .chooseRecipe__fig {
+    height: 4rem;
+    width: auto;
   }
   .dayTech__desc {
     font-size: 1.5rem;
