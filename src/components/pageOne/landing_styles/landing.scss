@@ -208,6 +208,8 @@
 
         &__signIn {
             margin: 3rem 0 0 -10rem;
+            width: 120px;
+            white-space: nowrap;
         }
 
         &__figure {
@@ -227,6 +229,8 @@
 
         &__enter {
             margin-right: 0;
+            overflow: hidden;
+            white-space: nowrap;
         }
 
         &__exampleOnePic, &__exampleTwoPic{
@@ -269,15 +273,9 @@
                 }
             }
 
-            &__signIn{
-                width: 120px;
-                white-space: nowrap;
-            }
 
             &__enter{
                 width: 270px;
-                overflow: hidden;
-                white-space: nowrap;
                 padding: 0.5rem;;
             }
     }
