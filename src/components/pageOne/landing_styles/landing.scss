@@ -3,12 +3,17 @@
 .landing {
     display: grid;
     grid-template-columns: 10vw 40vw 40vw 10vw;
-    grid-template-rows: 10vh 60vh 30vh 150vh;
+    grid-template-rows: 10vh 60vh 30vh 15vh 40vh 25vh 40vh 25vh 15vh;
     grid-template-areas:
         ". . . signIn"
         ". title figure ."
         ". text text ."
-        ". . . .";
+        ". . . ."
+        ". onePic oneText ."
+        ". . . ."
+        ". twoText twoPic twoPic"
+        ". . . ."
+        "footer footer footer footer";
 
     overflow: hidden;
     &__signIn {
@@ -104,24 +109,99 @@
         }
     }
 
-    &__hiddenArrow{
-        visibility:hidden;
+    &__hiddenArrow {
+        visibility: hidden;
         transition: visibility 0.3s;
+    }
+
+    &__exampleOnePic {
+        grid-area: onePic;
+        pointer-events: none;
+
+        img {
+            width: 40vw;
+            height: auto;
+        }
+    }
+
+    &__exampleOneText {
+        grid-area: oneText;
+
+        max-width: 30vw;
+        
+        margin-left: 10rem;
+
+        h2{
+            font-size: 3rem;
+            font-weight: bold;
+        }
+    }
+
+    &__exampleTwoPic {
+        grid-area: twoPic;
+
+
+        margin-left: 3vw;
+        pointer-events: none;
+
+        img {
+            width: 41vw;
+            height: auto;
+        }
+    }
+
+    &__exampleTwoText {
+        grid-area: twoText;
+        max-width:30vw;
+        
+        margin-right:3rem;
+        
+        // margin-left:7rem;
+
+        h2{
+            font-size: 2.7rem;
+            font-weight: bolder;
+        }
+
+
+    }
+
+    &__footer {
+        grid-area: footer;
+
+        background-color: $priColor;
+        text-align: right;
+        padding: 1rem 5rem;
+        
+        * {
+            color: $secColor;
+        }
+
     }
 }
 
 //responsive
 
+
 @media only screen and (max-width: 768px) {
     .landing {
         grid-template-columns: 10vw 80vw 10vw;
-        grid-template-rows: 10vh 40vh 20vh 30vh 150vh;
+        grid-template-rows: 10vh 40vh 20vh 30vh 5vh 30vh 3vh 30vh 4vh 30vh 3vh 30vh 5vh 15vh;
         grid-template-areas:
             ". . signIn "
             ". title title "
             ". figure ."
             ". text ."
-            ". . .";
+            ". . ."
+            ". onePic ."
+            ". . ."
+            ". oneText ."
+            ". . ."
+            ". twoPic ."
+            ". . ."
+            ". twoText ."
+            ". . ."
+            "footer footer footer";
 
         &__signIn {
             margin: 3rem 0 0 -10rem;
@@ -145,5 +225,19 @@
         &__enter {
             margin-right: 0;
         }
+
+        &__exampleOnePic, &__exampleTwoPic{
+            margin:0 auto;
+
+            img{
+                width: 30rem;
+            }
+        }
+        &__exampleOneText, &__exampleTwoText{
+            margin:0 auto;
+            text-align: center;
+            max-width: 30rem;
+        }
+       
     }
 }

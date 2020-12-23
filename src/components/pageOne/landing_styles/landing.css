@@ -3,9 +3,9 @@
   display: grid;
   -ms-grid-columns: 10vw 40vw 40vw 10vw;
       grid-template-columns: 10vw 40vw 40vw 10vw;
-  -ms-grid-rows: 10vh 60vh 30vh 150vh;
-      grid-template-rows: 10vh 60vh 30vh 150vh;
-      grid-template-areas: ". . . signIn" ". title figure ." ". text text ." ". . . .";
+  -ms-grid-rows: 10vh 60vh 30vh 15vh 40vh 25vh 40vh 25vh 15vh;
+      grid-template-rows: 10vh 60vh 30vh 15vh 40vh 25vh 40vh 25vh 15vh;
+      grid-template-areas: ". . . signIn" ". title figure ." ". text text ." ". . . ." ". onePic oneText ." ". . . ." ". twoText twoPic twoPic" ". . . ." "footer footer footer footer";
   overflow: hidden;
 }
 
@@ -127,13 +127,79 @@
   transition: visibility 0.3s;
 }
 
+.landing__exampleOnePic {
+  -ms-grid-row: 5;
+  -ms-grid-column: 2;
+  grid-area: onePic;
+  pointer-events: none;
+}
+
+.landing__exampleOnePic img {
+  width: 40vw;
+  height: auto;
+}
+
+.landing__exampleOneText {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: oneText;
+  max-width: 30vw;
+  margin-left: 10rem;
+}
+
+.landing__exampleOneText h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.landing__exampleTwoPic {
+  -ms-grid-row: 7;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: twoPic;
+  margin-left: 3vw;
+  pointer-events: none;
+}
+
+.landing__exampleTwoPic img {
+  width: 41vw;
+  height: auto;
+}
+
+.landing__exampleTwoText {
+  -ms-grid-row: 7;
+  -ms-grid-column: 2;
+  grid-area: twoText;
+  max-width: 30vw;
+  margin-right: 3rem;
+}
+
+.landing__exampleTwoText h2 {
+  font-size: 2.7rem;
+  font-weight: bolder;
+}
+
+.landing__footer {
+  -ms-grid-row: 9;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: footer;
+  background-color: #33312E;
+  text-align: right;
+  padding: 1rem 5rem;
+}
+
+.landing__footer * {
+  color: #FEF9EF;
+}
+
 @media only screen and (max-width: 768px) {
   .landing {
     -ms-grid-columns: 10vw 80vw 10vw;
         grid-template-columns: 10vw 80vw 10vw;
-    -ms-grid-rows: 10vh 40vh 20vh 30vh 150vh;
-        grid-template-rows: 10vh 40vh 20vh 30vh 150vh;
-        grid-template-areas: ". . signIn " ". title title " ". figure ." ". text ." ". . .";
+    -ms-grid-rows: 10vh 40vh 20vh 30vh 5vh 30vh 3vh 30vh 4vh 30vh 3vh 30vh 5vh 15vh;
+        grid-template-rows: 10vh 40vh 20vh 30vh 5vh 30vh 3vh 30vh 4vh 30vh 3vh 30vh 5vh 15vh;
+        grid-template-areas: ". . signIn " ". title title " ". figure ." ". text ." ". . ." ". onePic ." ". . ." ". oneText ." ". . ." ". twoPic ." ". . ." ". twoText ." ". . ." "footer footer footer";
   }
   .landing__signIn {
     margin: 3rem 0 0 -10rem;
@@ -154,6 +220,17 @@
   }
   .landing__enter {
     margin-right: 0;
+  }
+  .landing__exampleOnePic, .landing__exampleTwoPic {
+    margin: 0 auto;
+  }
+  .landing__exampleOnePic img, .landing__exampleTwoPic img {
+    width: 30rem;
+  }
+  .landing__exampleOneText, .landing__exampleTwoText {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 30rem;
   }
 }
 /*# sourceMappingURL=landing.css.map */
