@@ -12,7 +12,7 @@ function ChangeDayModal({ isOpen, close, updateDay }) {
     }
 
     function choosenDay(day){
-        updateDay(day);
+        updateDay(day);  //commet, bug is gone
         close();
     }
 

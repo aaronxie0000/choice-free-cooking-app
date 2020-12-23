@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext, useEffect } from 'react';
+import React, { useState, useRef, useContext, useEffect, useMemo } from 'react';
 import { DayContext } from '../context/DayContext.js'
 import ReactDom from 'react-dom';
 import firebase from '../firebase.js';
@@ -12,55 +12,64 @@ import {UserContext} from '../context/UserContext'
 
 function SignInModal({ open, children, onClose }) {
     const [oldUser, updateUserType] = useState(true);
-    const [localUser, updateUser] = useContext(UserContext);
     const [loading, updateLoad] = useState(false);
+    const [localUser, updateUser] = useContext(UserContext);
+
+    const [dayID, updateDay] = useContext(DayContext);
+    const [tempDayID, updateTempDay] = useState(dayID);
 
     // firebase.auth().currentUser
     const email = useRef();
     const pass = useRef();
 
-    const [dayID, updateDay] = useContext(DayContext);
 
-    useEffect(updateUserData, [dayID]);
-    useEffect(manageUserData, [localUser]);
+    useMemo(updateUserData, [dayID]);
+    useMemo(manageUserData, [localUser]); //useMemo does not fix the bug
+
+    
+    //this does not work to fix the issue
+    useEffect(()=>{
+        console.log(tempDayID + ' right hereeeeeeee');
+        updateDay(tempDayID);
+    },[tempDayID]);
+
 
     if (!open) {
         return null;
     }
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            updateUser(user);
-        } else {
-          console.log('fail');
-        }
-      });
+    // firebase.auth().onAuthStateChanged(function(user) {
+    //     if (user) {
+    //        console.log(user);
+    //     } else {
+    //       console.log('fail');
+    //     }
+    //   });
 
     function manageUserData() {
-        console.log('1: manage user');
 
         if (localUser === null) return;
         if(loading) return;
 
+        console.log('expensive call');
 
         if (oldUser) {
-            console.log('2: user log in, attain user\'s day') //had endless amounts of calls on this function, bug; generating sign in again and again
-            
             updateLoad(true);
+            
             firebase.firestore().collection('usersDay').where('uid', '==', localUser.uid)
                 .onSnapshot((querySnapshot) => {
                     querySnapshot.forEach((doc) => {
                         const rawData = doc.data();
-                        updateDay(rawData.day);
+                        // updateDay(rawData.day); //!!! comment; bug is gone
+                        updateTempDay(rawData.day);
                     })
 
                 })
             updateLoad(false);
         }
         else if (localUser != null) {
-            console.log('2: user sign up, made new user\'s day');
-            
             updateLoad(true);
+            
             firebase.firestore().collection('usersDay').add({
                 uid: localUser.uid,
                 day: dayID,
@@ -73,12 +82,11 @@ function SignInModal({ open, children, onClose }) {
 
 
     function updateUserData() {
-        console.log('1: update user\'s day')
 
         if (localUser == null) return;
         if(loading) return;
         
-        console.log('2: update user\'s day')
+        console.log('expensive call');
 
         updateLoad(true);
         firebase.firestore().collection('usersDay').where('uid', '==', localUser.uid).limit(1).get().then((query) => {
