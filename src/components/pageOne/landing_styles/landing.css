@@ -211,6 +211,8 @@
   }
   .landing__signIn {
     margin: 3rem 0 0 -10rem;
+    width: 120px;
+    white-space: nowrap;
   }
   .landing__figure {
     width: 23rem;
@@ -228,6 +230,8 @@
   }
   .landing__enter {
     margin-right: 0;
+    overflow: hidden;
+    white-space: nowrap;
   }
   .landing__exampleOnePic, .landing__exampleTwoPic {
     margin: 0 auto;
@@ -253,14 +257,8 @@
   .landing__exampleOneText h4, .landing__exampleTwoText h4 {
     font-size: 1.4rem;
   }
-  .landing__signIn {
-    width: 120px;
-    white-space: nowrap;
-  }
   .landing__enter {
     width: 270px;
-    overflow: hidden;
-    white-space: nowrap;
     padding: 0.5rem;
   }
 }

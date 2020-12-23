@@ -481,6 +481,10 @@
     height: 4rem;
     width: auto;
   }
+  .chooseRecipe__nav__signIn {
+    white-space: nowrap;
+    overflow: hidden;
+  }
   .changeDayPop__dayOne {
     position: absolute;
     width: 10rem;
@@ -636,7 +640,6 @@
     max-width: -moz-fit-content;
     max-width: fit-content;
     height: 4.5rem;
-    white-space: nowrap;
   }
   .chooseRecipe__nav__home {
     font-size: 2rem;
