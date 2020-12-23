@@ -35,8 +35,6 @@ function ChooseRecipe() {
 
         const tempRecipeData = []
 
-        console.log('fetch data');
-
         firebase.firestore().collection('recipeSelect').where('day', '==', dayID)
             .onSnapshot((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
@@ -71,7 +69,9 @@ function ChooseRecipe() {
 
     if (loading) {
         return (
-            <h3>Loading....</h3>
+            <div style={{width:'100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems:'center'}}>
+                <h1>Loading...</h1>
+            </div>
         )
     }
     else {

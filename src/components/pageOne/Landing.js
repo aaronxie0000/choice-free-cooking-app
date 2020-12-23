@@ -47,6 +47,8 @@ function Landing() {
                 <h3>Trying to learn how to cook but <span style={{ color: '#DB5461' }}>overwhelmed</span> by all the recipes across the web? Choice-free Cooking will help you go from zero by teaching you key cooking skills across carefully selected recipes! </h3>
                 <img ref={downArrow} src={arrow} alt='downwards arrow'></img>
             </div>
+
+            
             <div className='landing__exampleOnePic'>
                 <img src={example1} alt="example"></img>
             </div>

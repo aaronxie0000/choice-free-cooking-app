@@ -31,8 +31,6 @@ function Recipe() {
     useEffect(() => {
         updateLoad(true);
 
-        console.log('fetch data');
-
         var unsubscribe = firebase.firestore().collection('recipeDetail').where('recipeID', '==', recipeID || 0)
             .onSnapshot((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
@@ -63,8 +61,8 @@ function Recipe() {
 
     if (loading) {
         return (
-            <div>
-                <h3>Loading...</h3>
+            <div style={{width:'100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems:'center'}}>
+                <h1>Loading...</h1>
             </div>
         )
     }
@@ -102,8 +100,6 @@ function Recipe() {
                     <Route path='/recipes/selected/tech' > <Tech recipeData={recipeData}></Tech></Route>
                     <Route path='/recipes/selected/concept'><Concept recipeData={recipeData}></Concept></Route>
                     <Route path='/recipes/selected/ingredients'> <Ingredients recipeData={recipeData}></Ingredients> </Route>
-
-
                 </Switch>
 
             </div>

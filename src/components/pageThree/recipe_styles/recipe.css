@@ -252,10 +252,11 @@
 }
 
 .recipeDetail__video {
-  min-width: 80%;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
   height: 50vh;
   border: none;
-  margin-bottom: 2rem;
 }
 
 .recipeDetail__notes {
@@ -398,7 +399,8 @@
 .recipeTech__video {
   border: none;
   padding: 0 3rem 1rem 3rem;
-  min-width: 70%;
+  margin: 0 auto;
+  width: 80%;
   height: 50vh;
 }
 
@@ -467,7 +469,8 @@
 .recipeConcept__video {
   border: none;
   padding: 0 0 1.5rem 0;
-  min-width: 80%;
+  width: 80%;
+  margin: 0 auto;
   height: 50vh;
 }
 

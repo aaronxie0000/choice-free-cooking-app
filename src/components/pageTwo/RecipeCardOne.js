@@ -5,8 +5,6 @@ function RecipeCardOne({ recipeData: { recipeOneID, recipeOneTitle, recipeOneDes
 
     return (
 
-        // move onClick={passRecipeID} up to the Link comp (which becomes an a comp); as that is the entire card, this div is just for styling
-
         <div>
             <h3 className={'chooseRecipe__cardOne__title'}>{recipeOneTitle}</h3>
             <h5 className={'chooseRecipe__cardOne__header'}>You'll Need:</h5>
