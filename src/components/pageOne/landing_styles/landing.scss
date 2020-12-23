@@ -116,7 +116,6 @@
 
     &__exampleOnePic {
         grid-area: onePic;
-        pointer-events: none;
 
         img {
             width: 40vw;
@@ -135,6 +134,11 @@
             font-size: 3rem;
             font-weight: bold;
         }
+
+        h4{
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
     }
 
     &__exampleTwoPic {
@@ -142,7 +146,6 @@
 
 
         margin-left: 3vw;
-        pointer-events: none;
 
         img {
             width: 41vw;
@@ -161,6 +164,11 @@
         h2{
             font-size: 2.7rem;
             font-weight: bolder;
+        }
+
+        h4{
+            font-size: 1.2rem;
+            font-weight: 500;
         }
 
 
@@ -259,8 +267,8 @@
             "footer footer footer";
             &__exampleOneText, &__exampleTwoText{
         
-                p{
-                    font-size: 1.5rem;
+                h4{
+                    font-size: 1.4rem;
                 }
             }
     }

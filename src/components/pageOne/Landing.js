@@ -55,7 +55,7 @@ function Landing() {
 
             <div className='landing__exampleOneText'>
                 <h2>Your SparkNotes for Cooking</h2>
-                <p>We went the mile, read the recipes, tested and tasted many dishes and put it all together for you. We help you navigate to the perfect dishes, like GoodReads for online recipes, but we also give summary and insights we have gathered like spark notes for cooking. We always credit and link to our sources. </p>
+                <h4>We went the mile, read the recipes, tested and tasted many dishes and put it all together for you. We help you navigate to the perfect dishes, like GoodReads for online recipes, but we also give summary and insights we have gathered like spark notes for cooking. We always credit and link to our sources. </h4>
             </div>
 
             <div className='landing__exampleTwoPic'>
@@ -64,7 +64,7 @@ function Landing() {
 
             <div className='landing__exampleTwoText'>
                 <h2>Choice-free. So you have more time to cook</h2>
-                <p>Our easy to use interface, accessible through the web on your computer or phone, helps you navigate to our carefully choosen recipe in no time at all. Each day we focus on core concepts and takeaway which we found most useful in our cooking today. By the end, you will sure be a competent home cook!</p>
+                <h4>Our easy to use interface, accessible through the web on your computer or phone, helps you navigate to our carefully choosen recipe in no time at all. Each day we focus on core concepts and takeaway which we found most useful in our cooking today. By the end, you will sure be a competent home cook!</h4>
             </div>
 
             <div className='landing__footer'>

@@ -131,7 +131,6 @@
   -ms-grid-row: 5;
   -ms-grid-column: 2;
   grid-area: onePic;
-  pointer-events: none;
 }
 
 .landing__exampleOnePic img {
@@ -152,13 +151,17 @@
   font-weight: bold;
 }
 
+.landing__exampleOneText h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 .landing__exampleTwoPic {
   -ms-grid-row: 7;
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-area: twoPic;
   margin-left: 3vw;
-  pointer-events: none;
 }
 
 .landing__exampleTwoPic img {
@@ -177,6 +180,11 @@
 .landing__exampleTwoText h2 {
   font-size: 2.7rem;
   font-weight: bolder;
+}
+
+.landing__exampleTwoText h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .landing__footer {
@@ -242,8 +250,8 @@
         grid-template-rows: 10vh 40vh 20vh 30vh 5vh 25vh 30vh 3vh 25vh 30vh 5vh 10vh;
         grid-template-areas: ". . signIn " ". title title " ". figure ." ". text ." ". . ." ". onePic ." ". oneText ." ". . ." ". twoPic ." ". twoText ." ". . ." "footer footer footer";
   }
-  .landing__exampleOneText p, .landing__exampleTwoText p {
-    font-size: 1.5rem;
+  .landing__exampleOneText h4, .landing__exampleTwoText h4 {
+    font-size: 1.4rem;
   }
 }
 /*# sourceMappingURL=landing.css.map */
